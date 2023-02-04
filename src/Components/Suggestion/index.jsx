@@ -8,7 +8,7 @@ const WrapperSuggestion = styled.div`
     gap:10px;
     align-items:center;
     span{
-        color: #0D6EFD;
+        color: ${props=>props.theme.palette.primary};
     }
 `
 const BoxSuggestion = styled.div`
@@ -16,9 +16,9 @@ const BoxSuggestion = styled.div`
     align-items:center;
     justify-content:space-between;
     padding:5px;
-    border: 1px solid #0D6EFD;
+    border: 1px solid ${props=>props.theme.palette.primary};
     border-radius: 5px;
-    background:#fff;
+    background:${props=>props.theme.palette.sectionBackground};
     width: 120px;
     p{
         margin-right:10px;

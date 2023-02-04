@@ -4,7 +4,7 @@ import FormsFooterNav from "../FormsFooterNav";
 import PayMethods from "../PayMethods";
 
 const Footer = styled.footer`
-  background-color: white;
+  background-color: ${props=>props.theme.palette.sectionBackground};
   display: flex;
   align-items: center;
   justify-content: space-between;

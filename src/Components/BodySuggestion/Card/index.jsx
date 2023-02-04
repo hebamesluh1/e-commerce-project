@@ -7,13 +7,13 @@ import { FlexDiv } from '../../HeaderSection/style';
 const WrapperCard2 = styled.div`
     border: 1px solid #E3E8EE;
     border-radius: 6px;
-    background:#fff;
+    background:${props=>props.theme.sectionBackground};
     margin-bottom:20px;
     .image{
         display:flex;
         justify-content:center;
         padding:10px;
-        border-bottom:1px solid #E3E8EE;
+        border-bottom:1px solid ${props=>props.theme.gray300};
     }
 `
 const ContentWrapper =styled.div`

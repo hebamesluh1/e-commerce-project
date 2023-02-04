@@ -1,8 +1,10 @@
-import React from 'react'
+import React,{useState} from 'react'
 import HeadAside from '../HeadAside';
 import styled from "styled-components";
 import SeeAll from './../SeeAll/index';
 
+import expendLess from '../../Assets/image/ListStore/other/expand_less.png';
+import expendMore from '../../Assets/image/ListStore/other/expand_more.png';
 
 const UlCategory = styled.ul`
     list-style:none;
@@ -13,16 +15,23 @@ const UlCategory = styled.ul`
     }
 `
 export default function Category() {
+    const [showList, setShowList] = useState(true);
+
+    const toggleShowList = () => {
+    setShowList(!showList);
+    };
     return (
         <div>
-            <HeadAside title="Category"/>
-            <UlCategory>
-                <li>Mobile accessory</li>
-                <li>Electronics</li>
-                <li>Smartphones</li>
-                <li>Modern tech</li>
-                <li><SeeAll/></li>
-            </UlCategory>
+            <HeadAside title="Category" toggleShowList={toggleShowList} arrow={showList?expendLess:expendMore}/>
+            {showList &&
+                <UlCategory>
+                    <li>Mobile accessory</li>
+                    <li>Electronics</li>
+                    <li>Smartphones</li>
+                    <li>Modern tech</li>
+                    <li><SeeAll/></li>
+                </UlCategory>
+            }
         </div>
     )
 }

@@ -9,12 +9,12 @@ const FooterNav = styled.ul`
   & li {
     font-weight: 400;
     font-size: 16px;
-    color: #606060;
+    color: ${props=>props.theme.palette.gray800};
     opacity: 0.6;
   }
   a{
     text-decoration:none;
-    color: #606060;
+    color: ${props=>props.theme.palette.gray800};
   }
 `;
 export default function FormsFooterNav() {

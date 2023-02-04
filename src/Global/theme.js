@@ -77,7 +77,7 @@ export const darkTheme = {
         sectionBackground : '#333',
         contentColor : '#5B8FB9',
         gray100 : '#fff',
-        gray200 : '#fff',
+        gray200 : '#121212',
         gray300 : '#fff',
         gray400 : '#fff',
         gray500 : '#fff',

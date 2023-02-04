@@ -11,8 +11,8 @@ const FooterStyled = styled.div`
     font-size: 16px;
     line-height: 24px;
     letter-spacing: -0.2px;
-    color: #606060;
-    background: #EFF2F4;
+    color:${props=>props.theme.palette.gray800};
+    background:${props=>props.theme.palette.gray200};
     padding:1.3rem 0;
 `
 export default function CopyRight() {
