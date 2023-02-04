@@ -18,9 +18,13 @@ const ThemeBtn = styled.button`
 `
 const BtnTheme = () => {
         const [theme, setTheme] = useContext(themeContext);
+        const toggleTheme = () => {
+            setTheme((theme) => (theme.theme === 'light' ? darkTheme : lightTheme));
+            localStorage.setItem('theme',theme.theme==='dark'?'light':'dark');
+        };
     return (
         <>
-            <ThemeBtn onClick={() => setTheme((prevState) => (prevState.theme === 'light' ? darkTheme : lightTheme))}>
+            <ThemeBtn onClick={toggleTheme}>
                 <img src={img} alt="img" />
             </ThemeBtn>
         </>

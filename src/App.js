@@ -5,7 +5,7 @@ import { router as routes } from './routes';
 
 //Style
 import { GlobalStyle } from "./Global/style";
-import { lightTheme} from "./Global/theme";
+import { darkTheme, lightTheme} from "./Global/theme";
 
 //context
 import { themeContext } from "./Context/themeContext";
@@ -17,9 +17,10 @@ function App() {
   const [theme, setTheme] = useState(lightTheme);
 
   useEffect(() => {
-    localStorage.getItem("Theme") === "dark" ? setTheme(lightTheme) : setTheme(lightTheme);
-  
+    localStorage.getItem("theme") ===darkTheme.theme ? setTheme(darkTheme) : setTheme(lightTheme);
   }, []); 
+
+  
   const router = useRoutes(routes);
   return (
     <ThemeProvider theme={theme}>
