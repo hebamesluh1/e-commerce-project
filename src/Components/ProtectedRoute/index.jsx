@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import { useContext } from 'react';
 import  PATHS  from './../../routes/index';
+import { AuthContext } from './../../Context/authContext';
 
-export default class ProtectedRoute extends Component {
-    render() {
+export const ProtectedRoute =()=> {
+    const {isAuthorized, setIsAuthorized} = useContext(AuthContext);
         return (
         <div>
-            {this.props.isAuthorized ? (
+            {isAuthorized? (
             <>
                 <Outlet />
             </>
             ) : (
-            <Navigate to='' />
+            <Navigate to={PATHS.LOGIN} />
             )}
         </div>
         );
     }
-}

@@ -6,7 +6,7 @@ const PartWrapper = styled.div`
     border: 1px solid #E0E0E0;
     display:flex;
     height:128.5px;
-    justify-content: center;
+    justify-content: space-between;
     background:${props=>props.theme.palette.sectionBackground}
 `
 const HeadPart = styled.h3`

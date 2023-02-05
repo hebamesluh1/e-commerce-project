@@ -107,7 +107,7 @@ export default function LoginForm() {
         <Input IsFacebook={true} />
         <Switcher>
             Don’t have an account?
-            <Link to="/Sign-up" className="link">
+            <Link to={PATHS.SIGNUP} className="link">
             &nbsp;Register now
             </Link>
         </Switcher>
