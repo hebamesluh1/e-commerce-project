@@ -1,5 +1,5 @@
 import React,{useContext} from 'react';
-import img from '../../Assets/image/header/toggletheme.png';
+import img from '../../Assets/image/header/theme.png';
 import styled from 'styled-components';
 import { themeContext } from '../../Context/themeContext';
 import { darkTheme, lightTheme } from '../../Global/theme';
@@ -7,9 +7,11 @@ const ThemeBtn = styled.button`
     position:absolute;
     border:none;
     cursor:pointer;
+    top:5px;
+    right:5%;
     background:transparent;
     img{
-        width:100%;
+        width:70px;
         border-radius: 6px;
     }
 `
