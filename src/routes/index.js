@@ -1,8 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { lazy} from 'react';
-// import { ProtectedRoute } from '../Components/ProtectedRoute';
-// import { AuthContext } from './../../Context/authContext';
-// import { useContext } from 'react';
+
 
 
 //pages
@@ -42,16 +40,6 @@ export const router = [
     ] },
     { path:PATHS.CART, element: <Cart /> },
     { path:PATHS.CLOTHES, element: <Clothes /> },
-    //trying to make protected routes :) 
-
-    // {path:PATHS.LIST, element:<ProtectedRoute isAuthorized/>, Children:[
-    //     {index:true , element:<Navigate to={PATHS.GRID}/>},
-    //     {path:PATHS.GRID,element:<BodySection />},
-    //     {path:PATHS.TABLE,element:<BodySuggestion />},
-    //     { path:PATHS.CLOTHES, element: <Clothes /> },
-    //     { path:PATHS.CART, element: <Cart /> },
-    // ]
-    // },
     { path: '*', element: <h1>page not found 404</h1> },
 ];
 
