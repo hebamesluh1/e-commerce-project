@@ -37,7 +37,7 @@ export default function LoginForm() {
             { abortEarly: false }
         )
         .then(() => {
-            console.log("valid");
+            console.log(valid);
             navigate(PATHS.LIST);
             SetErrors([]);
         })

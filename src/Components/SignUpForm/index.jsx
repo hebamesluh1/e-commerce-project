@@ -57,7 +57,7 @@ export default function SignUpForm() {
             { abortEarly: false }
         )
         .then(() => {
-            console.log("valid");
+            console.log(valid);
             navigate(PATHS.LIST);
             setValid(true);
             SetErrors([]);

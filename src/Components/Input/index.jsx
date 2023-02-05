@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 
 // importing the eye icon
 import eye from "../../Assets/image/Login/eye.png";
@@ -26,7 +26,7 @@ const NavLinkStyle = {
 
 export default function Input(props) {
   const SelectRef = React.createRef();
-  const navigate=useNavigate();
+  // const navigate=useNavigate();
 
   if (props.IsPassword) {
     return (
