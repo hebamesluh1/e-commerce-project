@@ -4,6 +4,10 @@ import { P } from './style';
 const ImgBorder = styled.div`
     background: #EEEEEE;
     border-radius: 6px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 `
 const DivWrapper = styled.div`
     margin:10px 0;
