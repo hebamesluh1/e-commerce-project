@@ -10,6 +10,7 @@ import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 import { PATHS } from './../../routes/index';
 import { FlexBetween } from '../../Global/components';
+import CheckBox from '../Brands/CheckBox';
 
 const WrapperSection = styled(FlexBetween)`
     ${props=>props.theme.fonts.body1};
@@ -67,7 +68,7 @@ export default function HeaderSection() {
 
             <FlexDiv>
             <FlexDiv>
-                <input type="checkbox" checked />   Verified only
+                <CheckBox title="Verified only"/>  
             </FlexDiv>
             <div>
                 <select>
