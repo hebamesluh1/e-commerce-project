@@ -6,11 +6,6 @@ const WrapperChecked = styled.div`
     display:flex;
     align-items:center;
     padding:10px 0;
-    h5{
-        ${props=>props.theme.fonts.body1};
-        color: ${props=>props.theme.palette.contentColor};
-
-    }
     .custom-checkbox{
         position: absolute;
         z-index: -1;
@@ -40,6 +35,8 @@ const WrapperChecked = styled.div`
     label{
         display: flex;
         align-items: center;
+        ${props=>props.theme.fonts.body1};
+        color: ${props=>props.theme.palette.contentColor};
     }
 `
 export default function CheckBox({title,img,value=false}) {
