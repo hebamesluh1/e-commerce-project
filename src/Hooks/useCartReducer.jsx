@@ -1,5 +1,5 @@
 import  { useReducer } from 'react';
-
+// import axios from 'axios';
 const initialState = {
     count: 0,
     products: [],
@@ -23,17 +23,6 @@ const Reduce = (state, action) => {
 
 const useCart = () => {
     const [state, dispatch] = useReducer(Reduce, initialState);
-
-  // const addToCart = (product) => {
-  //   try {
-  //     const res = axios.post('url');
-  //     if (res) {
-  //       dispatch({ type: ACTIONS.ADD_TO_CART, payload: res.data });
-  //     }
-  //   } catch (e) {
-  //     dispatch({ type: 'error', payload: e });
-  //   }
-  // }; if you deal with API
 
     const addToCart = (product) => dispatch({ type: ACTIONS.ADD_TO_CART, payload: product });
     const removeFromCart = (productId) => dispatch({ type: ACTIONS.REMOVE_FROM_CART, payload: productId });

@@ -19,15 +19,15 @@ const Menu=()=> {
     return (
         <UlStyle>
             <li>
-                <Link to={PATHS.MAIN}><img src={profile} alt="profile" /></Link>
+                <Link to='/'><img src={profile} alt="profile" /></Link>
             </li>
 
             <li>
-                <Link to={PATHS.LIST}><img src={Messages} alt="messages" /></Link>
+                <Link to='/'><img src={Messages} alt="messages" /></Link>
             </li>
 
             <li>
-                <Link to={PATHS.CLOTHES}><img src={Orders} alt="order" /></Link>
+                <Link to='/'><img src={Orders} alt="order" /></Link>
             </li>
 
             <li>

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { NavLink ,useNavigate} from "react-router-dom";
+import axios from "axios";
+import { NavLink } from "react-router-dom";
 import FormHeading from "../FormHeading";
 import Input from "../Input";
 import {
@@ -10,93 +11,138 @@ import {
 import { Dflex, HR } from "./style";
 import * as yup from "yup";
 import { PATHS } from './../../routes/index';
+import { useAuthContext } from './../../Context/authContext';
 
 export default function SignUpForm() {
-    const [Name, SetName] = useState("");
-    const [Surname, SetSurname] = useState("");
-    const [Email, SetEmail] = useState("");
-    const [Phone, SetPhone] = useState("");
-    const [Password, SetPassword] = useState("");
-    const [RepeatPassword, SetRepeatPassword] = useState("");
-    const [checkbox, SetCheckbox] = useState(false);
-    const [valid,setValid]=useState(false);
-    const [Errors, SetErrors] = useState({});
 
-    const navigate = useNavigate('');
+
+    const {
+        loading,
+        setLoading,
+        token,
+        setToken,
+        login,
+    } = useAuthContext();
+
+
+    const [name, setName] = useState("");
+    const [surName, setSurname] = useState("");
+    const [email, setEmail] = useState("");
+    const [phone, setPhone] = useState("");
+    const [password, setPassword] = useState("");
+    const [repeatPassword, setRepeatPassword] = useState("");
+    const [checkbox, setCheckbox] = useState(false);
+    const [valid,setValid]=useState(false);
+    const [errors, setErrors] = useState({});
+
 
     const schema = yup.object().shape({
-    Name: yup.string().required(),
-    Surname: yup.string().required(),
-    Email: yup.string().email().required(),
-    Phone: yup.string().required(),
-    Password: yup.string().min(8).required(),
-    RepeatPassword: yup
-        .string()
-        .min(8)
-        .required()
-        .oneOf([yup.ref("Password"), null], "Password Must match"),
-        checkbox: yup
-        .boolean()
+    name: yup.string()
+    .required("Please enter your name"),
+
+    surName: yup.string()
+    .required("Please enter your surName"),
+
+    email: yup.string()
+    .email("Invalid email address").required("Please enter your email"),
+
+    phone: yup.string()
+    .required("Please enter your phone number"),
+
+    password: yup.string()
+    .min(8,"password must be more than 8")
+    .matches(/[a-z]/g,"password must contain at least one character ")
+    .matches(/\d/g,"password must contain at least one digits")
+    .matches(/[!@#$%^&*)(+=._-]/g,"password must contain at least one special character")
+    .required("please enter your password"),
+
+
+    repeatPassword: yup.string()
+        .oneOf([yup.ref("password"), null],'Passwords must match')
+        .required("please enter your password again"),
+
+
+    checkbox: yup.boolean()
         .oneOf([true], "You should check the checkbox")
         .required(),
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         schema
         .validate(
             {
-            Name,
-            Surname,
-            Email,
-            Phone,
-            Password,
-            RepeatPassword,
+            name,
+            surName,
+            email,
+            phone,
+            password,
+            repeatPassword,
             checkbox,
             },
             { abortEarly: false }
         )
-        .then(() => {
+        .then(async() => {
+            const res = await axios.post(
+                "https://react-tt-api.onrender.com/api/users/signup",
+                {
+                name: name,
+                email:email,
+                password:password,
+                }
+            );
+            if (res) {
+                setToken(res.data.token);
+                localStorage.setItem("token",token);
+                localStorage.setItem("name",res.data.name);
+                login();
+            }
             console.log(valid);
-            navigate(PATHS.LIST);
             setValid(true);
-            SetErrors([]);
+            setErrors([]);
         })
         .catch((e) => {
             const validationErrors = {};
             e.inner.forEach(err => {
             validationErrors[err.path] = err.message;
             });
-            SetErrors({...validationErrors});
+            setErrors({...validationErrors});
             setValid(false);
-        });
-        // console.log(Errors.Name);
+        }).finally(()=> setLoading(false))
+
     };
+
+
+
     const handleChangeInput = (e, Tel) => {
         const { id, value } = e.target;
-        if (id === "Name") {
-        SetName(value);
+        if (id === "name") {
+        setName(value);
         }
-        if (id === "Surname") {
-        SetSurname(value);
+        if (id === "surName") {
+        setSurname(value);
         }
-        if (id === "Email") {
-        SetEmail(value);
+        if (id === "email") {
+        setEmail(value);
         }
-        if (id === "Phone") {
-        SetPhone(Tel + value);
+        if (id === "phone") {
+        setPhone(Tel + value);
         }
-        if (id === "Password") {
-        SetPassword(value);
+        if (id === "password") {
+        setPassword(value);
         }
-        if (id === "RepeatPassword") {
-        SetRepeatPassword(value);
+        if (id === "repeatPassword") {
+        setRepeatPassword(value);
         }
     };
 
+
     const handleCheckbox = (e) => {
-        SetCheckbox((prevState) => !prevState);
+        setCheckbox((prevState) => !prevState);
     };
+
+
     return (
         <FormBox onSubmit={handleSubmit}>
         <FormHeading name="Register" />
@@ -104,72 +150,72 @@ export default function SignUpForm() {
         <Dflex>
             <Input
             halfWidth={true}
-            id="Name"
+            id="name"
             label="Name"
             placeholder="Type here"
             type="text"
             HandleInputFunction={handleChangeInput}
-            value={Name}
+            value={name}
             />
             <Input
             halfWidth={true}
-            id="Surname"
+            id="surName"
             label="Surname"
             placeholder="Type here"
             type="text"
             HandleInputFunction={handleChangeInput}
-            value={Surname}
+            value={surName}
             />
         </Dflex>
 
-        {!Errors.Name?null: <ErrorMessage>{Errors.Name}</ErrorMessage> }
-        {!Errors.Surname?null: <ErrorMessage>{Errors.Surname}</ErrorMessage> }
+        {!errors.name?null: <ErrorMessage>{errors.name}</ErrorMessage> }
+        {!errors.surName?null: <ErrorMessage>{errors.surName}</ErrorMessage> }
         <Input
-            id="Email"
+            id="email"
             label="Your e-mail "
             placeholder="example@mail.com"
             type="text"
             HandleInputFunction={handleChangeInput}
-            value={Email}
+            value={email}
         />
-        {!Errors.Email?null: <ErrorMessage>{Errors.Email}</ErrorMessage> }
+        {!errors.email?null: <ErrorMessage>{errors.email}</ErrorMessage> }
 
 
         <Input
-            id="Phone"
+            id="phone"
             label="Phone"
             placeholder="00-000-00-00"
             type="text"
             Select={true}
-            value={Phone}
+            value={phone}
             HandleInputFunction={handleChangeInput}
         />
-        {!Errors.Phone?null: <ErrorMessage>{Errors.Phone}</ErrorMessage> }
+        {!errors.phone?null: <ErrorMessage>{errors.phone}</ErrorMessage> }
 
 
         <Input
-            id="Password"
+            id="password"
             label="Password"
             placeholder="At least 6 characters."
             type="password"
-            value={Password}
+            value={password}
             HandleInputFunction={handleChangeInput}
         />
-        {!Errors.Password?null: <ErrorMessage>{Errors.Password}</ErrorMessage> }
+        {!errors.password?null: <ErrorMessage>{errors.password}</ErrorMessage> }
 
 
         <Input
-            id="RepeatPassword"
+            id="repeatPassword"
             label="Repeat password"
             placeholder="Type here"
             type="password"
-            value={RepeatPassword}
+            value={repeatPassword}
             HandleInputFunction={handleChangeInput}
         />
-        {!Errors.RepeatPassword?null: <ErrorMessage>{Errors.RepeatPassword}</ErrorMessage> }
+        {!errors.repeatPassword?null: <ErrorMessage>{errors.repeatPassword}</ErrorMessage> }
 
 
-        <Input IsSubmit={true} type="submit" value="Register now" />
+        <Input IsSubmit={true} type="submit" value={loading?'Loading...':'Register now'} />
         <Input
             id="checkbox"
             label="I agree with "
@@ -178,11 +224,11 @@ export default function SignUpForm() {
             ChangeCheckboxState={handleCheckbox}
             checked={checkbox}
         />
-        {!Errors.checkbox?null: <ErrorMessage>{Errors.checkbox}</ErrorMessage> }
+        {!errors.checkbox?null: <ErrorMessage>{errors.checkbox}</ErrorMessage> }
         <HR/>
         <Switcher>
             Already have an accaunt?
-            <NavLink to="/login" className="link">
+            <NavLink to={PATHS.LOGIN} className="link">
             &nbsp;Login
             </NavLink>
         </Switcher>

@@ -8,6 +8,7 @@ import avatar from '../../Assets/image/main/another/Avatar.png';
 
 import styled from 'styled-components';
 import { FlexCenter } from './../../Global/components';
+import { useAuthContext } from './../../Context/authContext';
 
 
 
@@ -43,16 +44,36 @@ const Box = styled.div`
     line-height: 19px;
 `
 export default function FormHero() {
+    const {
+        authorized,
+        logout
+    } = useAuthContext();
     const navigate = useNavigate()
     return (
         <Style>
             <FormBox>
-                <FlexCenter>
+            {authorized?
+
+            <>
+            <FlexCenter>
+                <img src={avatar} alt="avatar" style={{ marginRight:'10px'}} />
+                <p>Hi, user let’s get stated</p>
+            </FlexCenter>
+            <Btn onClick={logout()}>Logout</Btn>
+            </>
+
+            :
+
+            <>
+            <FlexCenter>
                     <img src={avatar} alt="avatar" style={{ marginRight:'10px'}} />
                     <p>Hi, user let’s get stated</p>
                 </FlexCenter>
                 <Btn join="join" onClick={()=>navigate(PATHS.SIGNUP)}>Join now</Btn>
                 <Btn onClick={()=>navigate(PATHS.LOGIN)}>Log in</Btn>
+            </>
+            }
+            
             </FormBox>
             <Box orange="orange">
             Get US $10 off with a new <div>supplier</div>
