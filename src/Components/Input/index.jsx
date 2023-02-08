@@ -69,7 +69,7 @@ export default function Input(props) {
           style={{ width: "20px", height: "20px", cursor: "pointer" }}
           id={props.id}
           type="checkbox"
-          onClick={props.ChangeCheckboxState}
+          onChange={props.ChangeCheckboxState}
           checked={props.checked ? "checked" : ""}
         />
         <Label htmlFor={props.id}>

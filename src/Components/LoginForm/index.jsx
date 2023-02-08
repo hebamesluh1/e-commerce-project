@@ -1,67 +1,87 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import FormHeading from "../FormHeading";
 import Input from "../Input";
 import { ErrorMessage, FormBox, OR, Switcher } from "./style";
 import * as yup from "yup";
-import { useNavigate } from 'react-router-dom'
 import { PATHS } from './../../routes/index';
+import { useAuthContext } from './../../Context/authContext';
 
 export default function LoginForm() {
-    const navigate = useNavigate()
-    const [passwordType, SetType] = useState("password");
-    const [Username, SetUsername] = useState("");
-    const [Password, SetPassword] = useState("");
-    const [checkbox, SetCheckbox] = useState(false);
+
+
+    const {
+        loading,
+        setLoading,
+        setToken,
+        login,
+    } = useAuthContext();
+
+
+    const [passwordType, setType] = useState("password");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [checkbox, setCheckbox] = useState(false);
     const [valid, setValid] = useState(false);
-    const [Errors, SetErrors] = useState({});
+    const [errors, setErrors] = useState({});
 
     const schema = yup.object().shape({
-        Username: yup.string().email().required(),
-        Password: yup.string().required(),
-        checkbox: yup
-        .boolean()
-        .oneOf([true], "You should check the checkbox")
-        .required(),
+        username: yup.string().email().required(),
+        password: yup.string().required(),
+        //Here checkbox is optional 
+        // checkbox: yup
+        // .boolean()
+        // .oneOf([true], "You should check the checkbox")
+        // .required(),
     });
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setLoading(true);
         schema
         .validate(
             {
             checkbox,
-            Password,
-            Username,
+            password,
+            username,
             },
             { abortEarly: false }
         )
-        .then(() => {
+        .then(async ({ username, password }) => {
+            const res = await axios.post('https://react-tt-api.onrender.com/api/users/login', {
+                email: username,
+                password,
+            });
+            if (res) {
+                setToken(res.data.token)
+                localStorage.setItem('token',res.data.token);
+                login();
+            }
             console.log(valid);
-            navigate(PATHS.LIST);
-            SetErrors([]);
+            setErrors([]);
         })
         .catch((e) => {
             const validationErrors = {};
             e.inner.forEach(err => {
             validationErrors[err.path] = err.message;
             });
-            SetErrors({...validationErrors});
+            setErrors({...validationErrors});
             setValid(false);
-        });
+        }).finally(()=>setLoading(false))
     };
 
     const handleChangeInput = (e) => {
         const { id, value } = e.target;
-        id === "Username" ? SetUsername(value) : SetPassword(value);
+        id === "username" ? setUsername(value) : setPassword(value);
     };
 
-    const handleCheckbox = (e) => {
-        SetCheckbox((prevState) => !prevState);
+    const handleCheckbox = () => {
+        setCheckbox((prevState) => !prevState);
     };
 
     const changePasswordType = () => {
-        SetType((prevState) => (prevState === "password" ? "text" : "password"));
+        setType((prevState) => (prevState === "password" ? "text" : "password"));
     };
 
 
@@ -71,26 +91,26 @@ export default function LoginForm() {
         <FormHeading name="Sign in" />
 
         <Input
-            id="Username"
+            id="username"
             label="Username"
             placeholder="Email or phone"
             type="text"
             HandleInputFunction={handleChangeInput}
-            value={Username}
+            value={username}
         />
-        {!Errors.Username?null: <ErrorMessage>{Errors.Username}</ErrorMessage> }
+        {!errors.username?null: <ErrorMessage>{errors.username}</ErrorMessage> }
 
         <Input
-            id="Password"
+            id="password"
             label="Password"
             placeholder="Type here"
             type={passwordType}
-            value={Password}
+            value={password}
             IsPassword={true}
             ChangeTypeFunction={changePasswordType}
             HandleInputFunction={handleChangeInput}
         />
-        {!Errors.Password?null: <ErrorMessage>{Errors.Password}</ErrorMessage> }
+        {!errors.password?null: <ErrorMessage>{errors.password}</ErrorMessage> }
         <Input
             id="checkbox"
             label="Remember me"
@@ -98,10 +118,10 @@ export default function LoginForm() {
             ChangeCheckboxState={handleCheckbox}
             checked={checkbox}
         />
-        {!Errors.checkbox?null: <ErrorMessage>{Errors.checkbox}</ErrorMessage> }
+        {!errors.checkbox?null: <ErrorMessage>{errors.checkbox}</ErrorMessage> }
 
 
-        <Input IsSubmit={true} type="submit" value="Log In"/>
+        <Input IsSubmit={true} type="submit" value={loading?'Loading...':"Log In"}/>
         <OR>OR</OR>
         <Input IsGoogle={true} />
         <Input IsFacebook={true} />

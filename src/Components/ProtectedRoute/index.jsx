@@ -1,19 +1,22 @@
 import { Navigate, Outlet } from 'react-router-dom';
-import { useContext } from 'react';
-import  PATHS  from './../../routes/index';
-import { AuthContext } from './../../Context/authContext';
+import  {PATHS}  from './../../routes/index';
+import { useAuthContext } from './../../Context/authContext';
+
 
 export const ProtectedRoute =()=> {
-    const {isAuthorized, setIsAuthorized} = useContext(AuthContext);
+    const {
+        authorized,
+    } = useAuthContext();
         return (
         <div>
-            {isAuthorized? (
+            {authorized? (
             <>
                 <Outlet />
             </>
             ) : (
-            <Navigate to={PATHS.LOGIN} />
-            )}
+                <Navigate to={PATHS.LOGIN}/>
+            )
+            }
         </div>
         );
     }

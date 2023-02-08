@@ -26,7 +26,7 @@ const NotFoundMessage = () => {
             <FlexCenter style={{flexDirection:'column'}}>
                 <h1>ERROR 404</h1>
                 <p>PAGE NOT FOUND</p>
-                <BtnStyle onClick={()=><Navigate to={PATHS.MAIN}/>}>BACK TO MAIN PAGE</BtnStyle>
+                <BtnStyle onClick={()=><Navigate to={PATHS.LOGIN}/>}>BACK TO MAIN PAGE</BtnStyle>
             </FlexCenter>
         </FlexCenter>
     )

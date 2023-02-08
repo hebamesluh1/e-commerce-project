@@ -2,6 +2,7 @@ import { useRoutes } from "react-router-dom";
 import React, { Suspense } from 'react';
 import { ThemeProvider } from "styled-components";
 import { router as routes } from './routes';
+import AuthProvider from './Context/authContext';
 
 //Style
 import { GlobalStyle } from "./Global/style";
@@ -10,10 +11,8 @@ import { darkTheme, lightTheme} from "./Global/theme";
 //context
 import { themeContext } from "./Context/themeContext";
 import { useEffect, useState } from "react";
-import { AuthContext } from './Context/authContext';
 
 function App() {
-  const [isAuthorized, setIsAuthorized] = useState(false);
   const [theme, setTheme] = useState(lightTheme);
 
   useEffect(() => {
@@ -24,12 +23,14 @@ function App() {
   const router = useRoutes(routes);
   return (
     <ThemeProvider theme={theme}>
-      <AuthContext.Provider value={[isAuthorized, setIsAuthorized]}>
         <themeContext.Provider value={[theme, setTheme]}>
+          <AuthProvider>
             <GlobalStyle />
-            <Suspense fallback={<div className="lds-dual-ring"></div>}>{router}</Suspense>
+            <Suspense fallback={<div className="lds-dual-ring"></div>}>
+              {router}
+            </Suspense>
+          </AuthProvider>
         </themeContext.Provider>
-      </AuthContext.Provider>
     </ThemeProvider>
   );
 }
