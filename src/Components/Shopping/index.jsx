@@ -10,7 +10,7 @@ import img3 from '../../Assets/image/cart/card2/img-group (2).png';
 export default function Shopping() {
     // const { state } = useProductContext();
     return (
-        <BorderWrapper>
+        <BorderWrapper style={{gap: '20px'}}>
             <div>
                 {/* {!state.products.length && 'No Products in the cart'}
                 <ul>

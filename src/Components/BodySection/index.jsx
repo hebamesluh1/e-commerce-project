@@ -11,6 +11,7 @@ import pic5 from '../../Assets/image/ListStore/components/08.png';
 import pic6 from '../../Assets/image/ListStore/components/10.png';
 
 
+
 export default function BodySection() {
     return (
         <div>

@@ -50,4 +50,5 @@ export const ImgBorder = styled.div`
     display:flex;
     align-items:center;
     padding:10px;
+    cursor:pointer;
 `
