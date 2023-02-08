@@ -16,6 +16,7 @@ export default function LoginForm() {
         setLoading,
         setToken,
         login,
+        setUserName
     } = useAuthContext();
 
 
@@ -55,6 +56,8 @@ export default function LoginForm() {
             });
             if (res) {
                 setToken(res.data.token)
+                setUserName(res.data.name)
+                localStorage.setItem('name', res.data.name);
                 localStorage.setItem('token',res.data.token);
                 login();
             }

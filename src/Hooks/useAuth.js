@@ -19,6 +19,8 @@ const useAuth = (url) => {
 
     useEffect(()=>{
         const token = localStorage.getItem("token");
+        const name = localStorage.getItem("name");
+        setUserName(name);
         if(token){
             setAuthorized(true);
         }
