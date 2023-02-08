@@ -14,7 +14,7 @@ export const ProtectedRoute =()=> {
                 <Outlet />
             </>
             ) : (
-                <Navigate to={PATHS.HOME}/>
+                <Navigate to={PATHS.LOGIN}/>
             )
             }
         </div>

@@ -1,8 +1,6 @@
 import { Navigate } from 'react-router-dom';
 import { lazy} from 'react';
 import { ProtectedRoute } from '../Components/ProtectedRoute';
-// import { AuthContext } from './../../Context/authContext';
-// import { useContext } from 'react';
 
 //pages
 const Main =lazy(() => import('../Pages/Main'));
@@ -23,7 +21,6 @@ const BodySuggestion = lazy(()=>import('../Components/BodySuggestion'));
 export const PATHS={
     LOGIN:'/logIn',
     SIGNUP:'/signUp',
-    MAIN:'main',
     LIST:'list',
     CART:'cart',
     CLOTHES:'clothes',
@@ -32,10 +29,9 @@ export const PATHS={
     HOME:'/home',
 }
 export const router = [
-    { index:'true',element:<Navigate to={PATHS.MAIN}/>},
+    { index:'true',element:<Navigate to={PATHS.LOGIN}/>},
     { path:PATHS.LOGIN,element:<LoginAuth />},
-    { path:PATHS.SIGNUP, element: <Main /> },
-    { path:PATHS.MAIN, element: <SignUpAuth /> },
+    { path:PATHS.SIGNUP, element: <SignUpAuth /> },
     { path:PATHS.HOME,element:<ProtectedRoute/>,children:[
         {index:true,element:<Main/>},
         { path:PATHS.LIST, element: <TechStore />,children:[

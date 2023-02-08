@@ -1,6 +1,4 @@
 import React from 'react';
-import { useNavigate} from 'react-router-dom';
-import { PATHS } from './../../routes/index';
 
 
 import avatar from '../../Assets/image/main/another/Avatar.png';
@@ -45,35 +43,17 @@ const Box = styled.div`
 `
 export default function FormHero() {
     const {
-        authorized,
+        // authorized,
         logout
     } = useAuthContext();
-    const navigate = useNavigate()
     return (
         <Style>
             <FormBox>
-            {authorized?
-
-            <>
-            <FlexCenter>
-                <img src={avatar} alt="avatar" style={{ marginRight:'10px'}} />
-                <p>Hi, user let’s get stated</p>
-            </FlexCenter>
-            <Btn onClick={logout()}>Logout</Btn>
-            </>
-
-            :
-
-            <>
             <FlexCenter>
                     <img src={avatar} alt="avatar" style={{ marginRight:'10px'}} />
                     <p>Hi, user let’s get stated</p>
                 </FlexCenter>
-                <Btn join="join" onClick={()=>navigate(PATHS.SIGNUP)}>Join now</Btn>
-                <Btn onClick={()=>navigate(PATHS.LOGIN)}>Log in</Btn>
-            </>
-            }
-            
+                <Btn join="join" onClick={()=>logout()}>Logout</Btn>
             </FormBox>
             <Box orange="orange">
             Get US $10 off with a new <div>supplier</div>

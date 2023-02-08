@@ -8,7 +8,7 @@ const SignUpAuth = ()=>{
     const {
         authorized,
     } = useAuthContext();
-    return <>{authorized?(<Navigate to={PATHS.Home}/>):(<SignUp />)}</>
+    return <>{authorized?(<Navigate to={PATHS.HOME}/>):(<SignUp />)}</>
 
 }
 export default SignUpAuth;

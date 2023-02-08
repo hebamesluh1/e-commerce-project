@@ -30,10 +30,11 @@ export default function LoginForm() {
     const schema = yup.object().shape({
         username: yup.string().email().required(),
         password: yup.string().required(),
-        checkbox: yup
-        .boolean()
-        .oneOf([true], "You should check the checkbox")
-        .required(),
+        //Here checkbox is optional 
+        // checkbox: yup
+        // .boolean()
+        // .oneOf([true], "You should check the checkbox")
+        // .required(),
     });
 
     const handleSubmit = (e) => {

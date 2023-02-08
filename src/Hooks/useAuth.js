@@ -17,12 +17,12 @@ const useAuth = (url) => {
         setAuthorized(true);
     }
 
-    // useEffect(()=>{
-    //     const token = localStorage.getItem("token");
-    //     if(token){
-    //         setAuthorized(true);
-    //     }
-    // },[])
+    useEffect(()=>{
+        const token = localStorage.getItem("token");
+        if(token){
+            setAuthorized(true);
+        }
+    },[])
 
 
     return {

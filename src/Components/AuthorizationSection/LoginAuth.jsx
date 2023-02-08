@@ -8,7 +8,7 @@ const LoginAuth = ()=>{
         authorized,
     } = useAuthContext();
     return <>
-        {authorized?(<Navigate to={PATHS.Home}/>):(<Login />)}
+        {authorized?(<Navigate to={PATHS.HOME}/>):(<Login />)}
     </>
 }
 export default LoginAuth;
