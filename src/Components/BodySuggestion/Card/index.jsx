@@ -13,7 +13,7 @@ const WrapperCard2 = styled.div`
         display:flex;
         justify-content:center;
         padding:10px;
-        border-bottom:1px solid ${props=>props.theme.gray300};
+        border-bottom:1px solid ${props=>props.theme.palette.gray300};
     }
 `
 const ContentWrapper =styled.div`

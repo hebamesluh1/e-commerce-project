@@ -31,7 +31,7 @@ const Menu=()=> {
             </li>
 
             <li>
-                <Link to={PATHS.CART}><img src={Cart} alt="cart" /></Link>
+                <Link to={`${PATHS.HOME}/cart`}><img src={Cart} alt="cart" /></Link>
             </li>
             <li><BtnTheme/></li>
         </UlStyle>
