@@ -98,8 +98,8 @@ export default function SignUpForm() {
                 localStorage.setItem("token",res.data.token);
                 localStorage.setItem("name",res.data.name);
                 login();
+                console.log(valid);
             }
-            console.log(valid);
             setValid(true);
             setErrors([]);
         })
