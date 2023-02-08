@@ -24,14 +24,16 @@ export const SearchFormStyled = styled.form`
 `;
 
 
-export const SearchSubmitStyled = styled.input`
+export const SearchSubmitStyled = styled.button`
     background: linear-gradient(180deg, #127fff 0%, #0067ff 100%);
-    color: #fff;
     padding: 12px 24px;
     border: none;
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
+    a{
+        color: #fff;
+    }
 `;
 
 

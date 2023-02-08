@@ -51,7 +51,7 @@ export default function FormHero() {
             <FormBox>
             <FlexCenter>
                     <img src={avatar} alt="avatar" style={{ marginRight:'10px'}} />
-                    <p>Hi {name}, let’s get stated</p>
+                    <p>Hi {name}, Enjoy Shopping </p>
                 </FlexCenter>
                 <Btn join="join" onClick={()=>logout()}>Logout</Btn>
             </FormBox>

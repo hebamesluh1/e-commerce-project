@@ -1,8 +1,7 @@
 import React from 'react'
 import img from '../../Assets/image/main/another/notfound.png';
 import { FlexCenter } from '../../Global/components';
-import {Navigate } from 'react-router-dom';
-import { PATHS } from '../../routes/index';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 const BtnStyle=styled.button`
@@ -20,13 +19,14 @@ const BtnStyle=styled.button`
     }
 `
 const NotFoundMessage = () => {
+    const navigate = useNavigate();
     return (
         <FlexCenter style={{    transform: "translateY(50%)",flexDirection:'column'}}>
             <div><img src={img} alt="notfound" /></div>
             <FlexCenter style={{flexDirection:'column'}}>
                 <h1>ERROR 404</h1>
                 <p>PAGE NOT FOUND</p>
-                <BtnStyle onClick={()=><Navigate to={PATHS.LOGIN}/>}>BACK TO MAIN PAGE</BtnStyle>
+                <BtnStyle onClick={()=>navigate(-1)}>BACK</BtnStyle>
             </FlexCenter>
         </FlexCenter>
     )
