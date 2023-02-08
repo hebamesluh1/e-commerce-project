@@ -14,7 +14,6 @@ export default function LoginForm() {
     const {
         loading,
         setLoading,
-        token,
         setToken,
         login,
     } = useAuthContext();
@@ -56,7 +55,7 @@ export default function LoginForm() {
             });
             if (res) {
                 setToken(res.data.token)
-                localStorage.setItem('token',token);
+                localStorage.setItem('token',res.data.token);
                 login();
             }
             console.log(valid);

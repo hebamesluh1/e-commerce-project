@@ -19,7 +19,7 @@ export default function SignUpForm() {
     const {
         loading,
         setLoading,
-        token,
+        setUserName,
         setToken,
         login,
     } = useAuthContext();
@@ -94,7 +94,8 @@ export default function SignUpForm() {
             );
             if (res) {
                 setToken(res.data.token);
-                localStorage.setItem("token",token);
+                setUserName(res.data.name);
+                localStorage.setItem("token",res.data.token);
                 localStorage.setItem("name",res.data.name);
                 login();
             }

@@ -4,7 +4,7 @@ const useAuth = (url) => {
     const [loading, setLoading] = useState(false);
     const [authorized , setAuthorized]=useState(false);
     const [token, setToken] = useState("");
-    const [name, setName] = useState("");
+    const [name, setUserName] = useState("");
 
 
 
@@ -33,7 +33,7 @@ const useAuth = (url) => {
         token,
         setToken,
         name,
-        setName,
+        setUserName,
         logout,
         login,
     };
