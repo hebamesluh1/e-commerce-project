@@ -31,9 +31,7 @@ export const SearchSubmitStyled = styled.button`
     cursor: pointer;
     font-size: 15px;
     font-weight: 500;
-    a{
-        color: #fff;
-    }
+    color: #fff;
 `;
 
 

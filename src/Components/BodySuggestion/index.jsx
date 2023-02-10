@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import Card from './Card';
-import Suggestion from '../../Components/Suggestion';
+import Suggestion from '../Brands/CheckBox/Suggestion';
 
 import goodRate from '../../Assets/image/electronics1/goodrate.png';
 import rate from '../../Assets/image/electronics1/rating.png';

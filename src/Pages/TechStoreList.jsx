@@ -8,22 +8,25 @@ import SecondSection from '../Sections/SecondSection';
 import {Container} from '../Global/components';
 import FooterListPage from '../Sections/FooterListPage';
 import TopFooter from '../Components/TopFooter';
+import CheckProvider from '../Context/checkBoxContext';
 
 export default function TechStore() {
     return (
         <>
-        <Header show="show"/>
-        <Nav/>
-        <NavList />
-        <Container>
-        <div style={{display:'flex'}}>
-            <Aside />
-            <SecondSection />
-        </div>
-        <FooterListPage />
-        </Container>
-        <TopFooter/>
-        <Footer />
+            <Header show="show"/>
+            <Nav/>
+            <NavList />
+            <Container>
+                <CheckProvider>
+                    <div style={{display:'flex'}}>
+                        <Aside />
+                        <SecondSection />
+                    </div>
+                </CheckProvider>
+            <FooterListPage />
+            </Container>
+            <TopFooter/>
+            <Footer />
         </>
     )
 }

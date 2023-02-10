@@ -1,11 +1,16 @@
 import React,{useState} from 'react';
 import { SearchFormStyled, SearchInputStyled, SearchSelectStyled, SearchSubmitStyled } from "./style";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { PATHS } from './../../routes/index';
 const SearchForm = ({show}) => {
     const [selectedOption, setSelectedOption] = useState('');
+    const navigate = useNavigate();
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        navigate(`${PATHS.HOME}/${selectedOption}`)
+    }
     return (
-        <SearchFormStyled show={!show}>
+        <SearchFormStyled show={!show} onSubmit={handleSubmit}>
             <SearchInputStyled type="text" placeholder="Search" />
             <SearchSelectStyled name="searchSelect" id="searchSelect" value={selectedOption}
                         onChange={(e) => setSelectedOption(e.target.value)}>
@@ -15,7 +20,7 @@ const SearchForm = ({show}) => {
                 <option value={PATHS.CLOTHES}> Clothes</option>
             </SearchSelectStyled>
             <SearchSubmitStyled type="submit" value="Search">
-                <Link to={`${PATHS.HOME}/${selectedOption}`}>Search</Link>
+                Search
             </SearchSubmitStyled>
         </SearchFormStyled>
     );

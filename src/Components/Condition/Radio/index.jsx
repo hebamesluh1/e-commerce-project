@@ -51,7 +51,7 @@ export default function CheckBox({title,value=false}) {
     }
     return (
         <WrapperChecked>
-            <input type="radio" name='value' className='custom-radio' onClick={toggleChecked} checked={selected}/>
+            <input type="radio" name='value' className='custom-radio' onChange={toggleChecked} checked={selected}/>
             <label onClick={toggleChecked}>{title}</label>
         </WrapperChecked>
     )
