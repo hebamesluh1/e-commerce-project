@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import styled from 'styled-components';
 
 const Ul = styled.ul`
@@ -9,6 +9,7 @@ const Ul = styled.ul`
     border-bottom:1px solid #eee;
     li{
         padding:10px;
+        cursor:pointer;
     }
     .active{
         color: #0D6EFD;
@@ -17,13 +18,15 @@ const Ul = styled.ul`
     }
 `
 export default function HeadDescription() {
+    const [active, setActive] = useState(1);
+    const handelActive = (index) => setActive(index);
     return (
         <div>
             <Ul>
-                <li className='active'>Description</li>
-                <li>Reviews</li>
-                <li>Shipping</li>
-                <li>About company</li>
+                <li className={active === 1 ? 'active' : ''} onClick={()=>handelActive(1)}>Description</li>
+                <li className={active === 2 ? 'active' : ''} onClick={()=>handelActive(2)}>Reviews</li>
+                <li className={active === 3 ? 'active' : ''} onClick={()=>handelActive(3)}>Shipping</li>
+                <li className={active === 4 ? 'active' : ''} onClick={()=>handelActive(4)}>About company</li>
             </Ul>
         </div>
     )
