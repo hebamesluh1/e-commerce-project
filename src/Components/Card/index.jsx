@@ -3,8 +3,11 @@ import rate from '../../Assets/image/ListStore/components/rating.png';
 import cart from '../../Assets/image/cart/card1/shopping_cart.png';
 import { FlexDiv } from './../HeaderSection/style';
 import {CardWrapper,H5Styling,H4Styling,DescriptionStyle,Details,ImgBorder} from './style';
+import {useCartContext} from '../../Context/productContext';
 
 export default function Card({title,img,discount,description}) {
+    const cartContext = useCartContext();
+    console.log('cart context test',cartContext);
     return (
         <CardWrapper>
             <div>

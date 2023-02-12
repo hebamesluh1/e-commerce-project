@@ -1,9 +1,9 @@
 import React from 'react'
-import fav from '../../../Assets/image/electronics1/favorite_border.png';
 import cart from '../../../Assets/image/cart/card1/shopping_cart.png'
 import { DescriptionStyle, H4Styling ,ImgBorder} from '../../Card/style';
 import styled from 'styled-components';
 import { FlexDiv } from '../../HeaderSection/style';
+import { useCartContext } from './../../../Context/productContext';
 
 const WrapperCard2 = styled.div`
     border: 1px solid #E3E8EE;
@@ -21,6 +21,8 @@ const ContentWrapper =styled.div`
     padding:10px;
 `
 export default function Card2({img , discount , rateImg ,rate}) {
+    const cartContext = useCartContext();
+    console.log('cart context test',cartContext);
     return (
         <WrapperCard2>
             <div className='image'>
