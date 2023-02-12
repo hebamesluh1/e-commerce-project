@@ -5,7 +5,7 @@ import { BorderWrapper } from './../Payment/style';
 import img1 from '../../Assets/image/cart/card2/img-group.png';
 import img2 from '../../Assets/image/cart/card2/img-group (1).png';
 import img3 from '../../Assets/image/cart/card2/img-group (2).png';
-import  useProductContext from '../../Context/productContext';
+
 
 export default function Shopping() {
     return (
