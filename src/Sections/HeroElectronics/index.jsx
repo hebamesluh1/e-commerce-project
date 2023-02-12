@@ -11,6 +11,7 @@ import { FlexBetween ,SpaceContainer,BackgroundWhite} from '../../Global/compone
 const FlexStart = styled(FlexBetween)`
     align-items:flex-start;
     padding:20px;
+    gap: 20px;
 `
 export default function HeroElectronics() {
     return (

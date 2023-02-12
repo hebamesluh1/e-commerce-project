@@ -33,13 +33,14 @@ const Style = styled.div`
 
 const Box = styled.div`
     background:${(props)=>(!props.orange?"#55BDC4":"#F38332")};
-    padding:20px;
+    padding:50px 20px;
     border-radius: 6px;
     margin:10px 0;
     color:#fff;
     font-weight: 400;
     font-size: 16px;
     line-height: 19px;
+    height:35%;
 `
 export default function FormHero() {
     const {

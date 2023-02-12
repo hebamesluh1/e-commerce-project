@@ -1,14 +1,13 @@
 import  { useReducer } from 'react';
-// import axios from 'axios';
+
 const initialState = {
-    count: 0,
     products: [],
 };
 
 const ACTIONS = {
     ADD_TO_CART: 'addToCart',
     REMOVE_FROM_CART: 'removeFromCart',
-    };
+};
 
 const Reduce = (state, action) => {
     switch (action.type) {

@@ -1,10 +1,13 @@
 import React from 'react'
 import rate from '../../Assets/image/ListStore/components/rating.png';
-import fav from '../../Assets/image/ListStore/components/favorite_border.png';
+import cart from '../../Assets/image/cart/card1/shopping_cart.png';
 import { FlexDiv } from './../HeaderSection/style';
 import {CardWrapper,H5Styling,H4Styling,DescriptionStyle,Details,ImgBorder} from './style';
+import {useCartContext} from '../../Context/productContext';
 
 export default function Card({title,img,discount,description}) {
+    const cartContext = useCartContext();
+    console.log('cart context test',cartContext);
     return (
         <CardWrapper>
             <div>
@@ -13,7 +16,7 @@ export default function Card({title,img,discount,description}) {
             <div>
             <FlexDiv style={{justifyContent:'space-between'}}>
                 <H5Styling>{title}</H5Styling>
-                <ImgBorder><img src={fav} alt="" /></ImgBorder>
+                <ImgBorder><img src={cart} alt="" /></ImgBorder>
                 </FlexDiv>
                 
                 <H4Styling>$998.00 <del>{discount}</del></H4Styling>

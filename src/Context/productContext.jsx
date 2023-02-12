@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import useCartReducer from '../hooks/useCartReducer';
+import useCartReducer from '../Hooks/useCartReducer';
 
 const CartContext = createContext({});
 
@@ -8,14 +8,9 @@ export const useCartContext = () => {
 }
 
 const CartContextProvider = ({ children }) => {
-    const { cart, addToCart, removeFromCart } = useCartReducer();
+    const cart = useCartReducer();
     return (
-        <CartContext.Provider value={{
-            cart,
-            count: cart.length,
-            addToCart,
-            removeFromCart,
-        }}>
+        <CartContext.Provider value={cart}>
             {children}
         </CartContext.Provider>
     )
