@@ -1,16 +1,20 @@
 import React,{useState} from 'react'
-import HeadAside from '../HeadAside'
 
-import expendLess from '../../../../../../../Assets/image/ListStore/other/expand_less.png';
-import expendMore from '../../../../../../../Assets/image/ListStore/other/expand_more.png';
+//components
+import HeadAside from '../Brands/HeadAside'
 
+//images
+import expendLess from '../../../../../../Assets/image/ListStore/other/expand_less.png';
+import expendMore from '../../../../../../Assets/image/ListStore/other/expand_more.png';
+
+//style
 import {RangeInput,ButtonRange,InputRange} from './style';
 
 
 export default function Range() {
 
+    
     const [showList, setShowList] = useState(false);
-
     const toggleShowList = () => {
     setShowList(!showList);
     };

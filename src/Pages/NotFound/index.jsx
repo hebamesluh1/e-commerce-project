@@ -1,5 +1,5 @@
 import React from 'react'
-import NotFoundMessage from '../Components/NotFoundMessage'
+import NotFoundMessage from './components/NotFoundMessage'
 
 function NotFound() {
     return (

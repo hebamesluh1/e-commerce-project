@@ -1,9 +1,14 @@
 import React from 'react'
-import cart from '../../../Assets/image/cart/card1/shopping_cart.png'
-import { DescriptionStyle, H4Styling ,ImgBorder} from '../../Card/style';
+
+import cart from '../../../../../../../Assets/image/cart/card1/shopping_cart.png'
+
+
+import { DescriptionStyle ,ImgBorder} from '../../BodySection/Card/style';
 import styled from 'styled-components';
-import { FlexDiv } from '../../HeaderSection/style';
-import { useCartContext } from './../../../Context/productContext';
+import { FlexDiv ,H4Styling} from '../../../../../../../Global/components';
+
+
+import { useCartContext } from '../../../../../../../Context/productContext';
 
 const WrapperCard2 = styled.div`
     border: 1px solid #E3E8EE;

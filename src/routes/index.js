@@ -6,14 +6,14 @@ import { ProtectedRoute } from '../Components/ProtectedRoute';
 const Main =lazy(() => import('../Pages/Main'));
 const LoginAuth =lazy(()=> import('./../Components/AuthorizationSection/LoginAuth'));
 const SignUpAuth =lazy(()=> import('./../Components/AuthorizationSection/SignUpAuth'));
-const TechStore = lazy(()=>import (("../Pages/TechStoreList")));
+const TechStore = lazy(()=>import (("../Pages/TechStore")));
 const Cart = lazy(()=>import('../Pages/Cart'));
 const Clothes= lazy(()=>import('../Pages/Clothes'));
 const NotFound= lazy(()=>import('../Pages/NotFound'));
 
 
-const BodySection = lazy(()=>import('../Components/BodySection'));
-const BodySuggestion = lazy(()=>import('../Components/BodySuggestion'));
+const BodySection = lazy(()=>import('../Pages/TechStore/sections/SecondSection/components/BodySection'));
+const BodySuggestion = lazy(()=>import('../Pages/TechStore/sections/SecondSection/components/BodySuggestion'));
 
 
 

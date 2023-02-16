@@ -1,15 +1,15 @@
 import React from 'react'
 
-import Card from '../Card'
+import Card from './Card'
 
 
-import pic1 from '../../Assets/image/ListStore/components/02.png';
-import pic2 from '../../Assets/image/ListStore/components/03.png';
-import pic3 from '../../Assets/image/ListStore/components/04.png';
-import pic4 from '../../Assets/image/ListStore/components/07.png';
-import pic5 from '../../Assets/image/ListStore/components/08.png';
-import pic6 from '../../Assets/image/ListStore/components/10.png';
-import Suggestion from '../Brands/CheckBox/Suggestion';
+import pic1 from '../../../../../../Assets/image/ListStore/components/02.png';
+import pic2 from '../../../../../../Assets/image/ListStore/components/03.png';
+import pic3 from '../../../../../../Assets/image/ListStore/components/04.png';
+import pic4 from '../../../../../../Assets/image/ListStore/components/07.png';
+import pic5 from '../../../../../../Assets/image/ListStore/components/08.png';
+import pic6 from '../../../../../../Assets/image/ListStore/components/10.png';
+import Suggestion from '../../../Aside/components/Brands/CheckBox/Suggestion';
 
 
 

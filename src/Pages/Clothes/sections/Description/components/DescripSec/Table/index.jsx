@@ -1,6 +1,8 @@
 import React from 'react'
+
+//style
 import styled from 'styled-components';
-import { P } from '../../Sections/RelatedProduct/Card6/style';
+import { P } from '../../../../RelatedProduct/Card/style';
 const TableStyle=styled.table`
     border:1px solid #E0E7E9;
     width:50%;

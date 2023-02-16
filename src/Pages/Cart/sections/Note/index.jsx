@@ -1,6 +1,6 @@
 import React from 'react'
 import Card from './components/Card'
-import { FlexDiv } from '../../../../Components/HeaderSection/style';
+import { FlexDiv } from '../../../../Global/components';
 
 //images
 import img1 from '../../../../Assets/image/cart/icon/icon.png';

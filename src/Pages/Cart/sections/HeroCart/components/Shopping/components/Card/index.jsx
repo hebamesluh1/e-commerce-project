@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
-import { FlexDiv } from '../../../../../../../../Components/HeaderSection/style';
+import { FlexDiv } from '../../../../../../../../Global/components';
 // import { useCartContext } from './../../../Context/productContext';
 const Wrapper = styled.div`
     display:flex;

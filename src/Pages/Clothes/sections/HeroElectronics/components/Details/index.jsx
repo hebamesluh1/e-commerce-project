@@ -1,10 +1,16 @@
 import React from 'react'
-import check from '../../Assets/image/electronics2/part1/check.png';
-import views from '../../Assets/image/electronics2/part1/Group 1003.png';
+
+//images
+import check from '../../../../../../Assets/image/electronics2/part1/check.png';
+import views from '../../../../../../Assets/image/electronics2/part1/Group 1003.png';
+
+//style
 import  styled  from 'styled-components';
-import { FlexDiv } from './../HeaderSection/style';
-import {P} from '../../Sections/RelatedProduct/Card6/style';
-import { H4Styling } from './../Card/style';
+import { FlexDiv } from '../../../../../../Global/components';
+import {P} from '../../../RelatedProduct/Card/style';
+import { H4Styling } from '../../../../../../Global/components';
+
+
 const H3 = styled.h3`
     ${props=>props.theme.fonts.body1};
     color: #00B517;

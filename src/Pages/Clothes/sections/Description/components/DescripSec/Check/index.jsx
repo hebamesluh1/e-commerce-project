@@ -1,6 +1,6 @@
 import React from 'react'
-import check from '../../../Assets/image/electronics2/other/check.png';
-import { P } from '../../../Sections/RelatedProduct/Card6/style';
+import check from '../../../../../../../Assets/image/electronics2/other/check.png';
+import { P } from '../../../../RelatedProduct/Card/style';
 import styled from 'styled-components';
 const WrapperCheck = styled.div`
     display:flex;

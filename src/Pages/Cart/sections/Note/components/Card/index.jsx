@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlexDiv } from '../../../../../../Components/HeaderSection/style';
+import { FlexDiv } from '../../../../../../Global/components';
 
 import styled from 'styled-components';
 const H5 =styled.h5`

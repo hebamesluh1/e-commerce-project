@@ -1,12 +1,14 @@
 import styled from "styled-components";
 
-export const FlexCenter = styled.div`
+export const FlexDiv=styled.div`
     display:flex;
     align-items:center;
+`
+export const FlexCenter = styled(FlexDiv)`
     justify-content:center;
 `
 
-export const FlexBetween = styled(FlexCenter)`
+export const FlexBetween = styled(FlexDiv)`
     justify-content:space-between;
 `
 export const Container = styled.div`
@@ -19,4 +21,23 @@ export const BackgroundWhite=styled.div`
     border: 1px solid ${props=>props.theme.palette.gray300};
     border-radius: 6px;
     background:${props=>props.theme.palette.sectionBackground};
+`
+export const H5Styling = styled.h5`
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #1C1C1C;
+`
+export const H4Styling = styled.h4`
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+    color: #1C1C1C;
+    del{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 19px;
+        color: #8B96A5;
+    }
 `

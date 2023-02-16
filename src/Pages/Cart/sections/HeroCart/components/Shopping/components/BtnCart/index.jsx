@@ -1,5 +1,5 @@
 import React from 'react'
-import { FlexDiv } from '../../../../../../../../Components/HeaderSection/style';
+import { FlexDiv } from '../../../../../../../../Global/components';
 import arrow from '../../../../../../../../Assets/image/cart/card2/arrow_back.png';
 import {Btn} from './style'
 import { useNavigate } from 'react-router-dom';

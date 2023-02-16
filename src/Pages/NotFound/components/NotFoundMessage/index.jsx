@@ -1,9 +1,12 @@
 import React from 'react'
-import img from '../../Assets/image/main/another/notfound.png';
-import { FlexCenter } from '../../Global/components';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 
+//image
+import img from '../../../../Assets/image/main/another/notfound.png';
+
+//style
+import { FlexCenter } from '../../../../Global/components';
+import styled from 'styled-components';
 const BtnStyle=styled.button`
     border-radius:6px;
     border:1px solid #e0e0e0;
@@ -18,10 +21,12 @@ const BtnStyle=styled.button`
         color:#fff;
     }
 `
+
+
 const NotFoundMessage = () => {
     const navigate = useNavigate();
     return (
-        <FlexCenter style={{    transform: "translateY(50%)",flexDirection:'column'}}>
+        <FlexCenter style={{transform: "translateY(50%)",flexDirection:'column'}}>
             <div><img src={img} alt="notfound" /></div>
             <FlexCenter style={{flexDirection:'column'}}>
                 <h1>ERROR 404</h1>

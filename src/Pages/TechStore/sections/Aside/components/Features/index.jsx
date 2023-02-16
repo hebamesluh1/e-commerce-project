@@ -6,8 +6,8 @@ import HeadAside from '../Brands/HeadAside'
 import SeeAll from '../Brands/SeeAll'
 
 
-import expendLess from '../../../../../../../Assets/image/ListStore/other/expand_less.png';
-import expendMore from '../../../../../../../Assets/image/ListStore/other/expand_more.png';
+import expendLess from '../../../../../../Assets/image/ListStore/other/expand_less.png';
+import expendMore from '../../../../../../Assets/image/ListStore/other/expand_more.png';
 
 
 

@@ -1,17 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
-import { P } from './style';
-const ImgBorder = styled.div`
-    background: #EEEEEE;
-    border-radius: 6px;
-    height: 200px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-`
-const DivWrapper = styled.div`
-    margin:10px 0;
-`
+import { P,DivWrapper, ImgBorder} from './style';
+
 export default function Card6({img}) {
     return (
         <div>

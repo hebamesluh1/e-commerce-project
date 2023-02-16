@@ -1,9 +1,14 @@
 import React from 'react'
-import { P } from '../../Sections/RelatedProduct/Card6/style';
+
+//styles
+import { P } from '../../../RelatedProduct/Card/style';
+import { BorderWrapper } from '../../../../../Cart/sections/HeroCart/components/Payment/style';
+
+
+//components
 import Check from './Check';
-import HeadDescription from '../HeadDescription';
-import { BorderWrapper } from '../Payment/style';
-import Table from './../Table/index';
+import HeadDescription from './HeadDescription';
+import Table from './Table';
 
 export default function DescripSec() {
     return (

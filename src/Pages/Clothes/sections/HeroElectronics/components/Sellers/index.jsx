@@ -1,14 +1,22 @@
 import React from 'react'
-import { BorderWrapper } from './../Payment/style';
-import {P} from '../../Sections/RelatedProduct/Card6/style';
-import img from '../../Assets/image/electronics2/part1/R.png';
-import img1 from '../../Assets/image/electronics2/part1/Flags.png';
-import img2 from '../../Assets/image/electronics2/part1/verified_user.png';
-import img3 from '../../Assets/image/electronics2/part1/language.png';
+
+//style
+import { BorderWrapper } from '../../../../../Cart/sections/HeroCart/components/Payment/style';
+import {P} from '../../../RelatedProduct/Card/style';
 import styled from 'styled-components';
-import { FlexDiv } from './../HeaderSection/style';
-import { Btn } from '../BtnCart/style';
-import fav from '../../Assets/image/electronics2/part1/favorite_border.png';
+import { FlexDiv,FlexCenter } from '../../../../../../Global/components';
+import { Btn } from '../../../../../Cart/sections/HeroCart/components/Shopping/components/BtnCart/style';
+
+
+//images
+import img from '../../../../../../Assets/image/electronics2/part1/R.png';
+import img1 from '../../../../../../Assets/image/electronics2/part1/Flags.png';
+import img2 from '../../../../../../Assets/image/electronics2/part1/verified_user.png';
+import img3 from '../../../../../../Assets/image/electronics2/part1/language.png';
+import fav from '../../../../../../Assets/image/electronics2/part1/favorite_border.png';
+
+
+
 
 const WrapperImg = styled.div`
     padding:10px;
@@ -38,7 +46,7 @@ export default function Sellers() {
                     <Btn width="full">Seller's profile</Btn>
                 </div>
             </BorderWrapper>
-            <FlexDiv style={{justifyContent: "center"}}><img src={fav} alt="" /><P style={{color:" #0D6EFD"}}>Save for later</P></FlexDiv>
+            <FlexCenter><img src={fav} alt="" /><P style={{color:" #0D6EFD"}}>Save for later</P></FlexCenter>
         </div>
     )
 }

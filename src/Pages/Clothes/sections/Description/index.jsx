@@ -1,7 +1,11 @@
 import React from 'react'
-import Like from '../../../../Components/Like';
-import { GridDiv } from './../HeroCart/style';
-import DescripSec from '../../../../Components/DescripSec/index';
+
+//components
+import Like from './components/Like';
+import DescripSec from './components/DescripSec';
+
+//style
+import { GridDiv } from '../../../Cart/sections/HeroCart/style';
 import {SpaceContainer} from '../../../../Global/components';
 
 export default function Description() {
