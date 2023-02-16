@@ -1,15 +1,15 @@
 import React from 'react'
 
 //sections and components
-import Header from '../../Sections/Header';
-import Nav from '../../Sections/Nav';
-import Footer from '../../Sections/Footer';
-import NavList from '../../Sections/NavList';
+import Header from '../../Components/Header';
+import Nav from '../../Components/Nav';
+import Footer from '../../Components/Footer';
+import NavList from '../../Components/NavList';
 
 import Aside from './sections/Aside';
 import SecondSection from './sections/SecondSection';
 
-import FooterListPage from '../../Sections/FooterListPage';
+import FooterListPage from './sections/SecondSection/components/FooterListPage';
 import TopFooter from '../../Components/TopFooter';
 
 

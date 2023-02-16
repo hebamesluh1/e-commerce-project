@@ -1,6 +1,6 @@
 import React from 'react'
-import leftArrow from '../../Assets/image/ListStore/components/chevron-left.png';
-import rightArrow from '../../Assets/image/ListStore/components/chevron-right.png';
+import leftArrow from '../../../../../../Assets/image/ListStore/components/chevron-left.png';
+import rightArrow from '../../../../../../Assets/image/ListStore/components/chevron-right.png';
 import styled from 'styled-components';
 
 const WrapperNumber = styled.div`

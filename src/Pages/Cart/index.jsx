@@ -1,7 +1,7 @@
 import React from 'react'
 import {Container} from '../../Global/components'
-import Footer from '../../Sections/Footer'
-import Header from '../../Sections/Header'
+import Footer from '../../Components/Footer'
+import Header from '../../Components/Header'
 import styled from 'styled-components';
 
 import Ad from '../../Components/Ad';

@@ -1,10 +1,10 @@
 import React from 'react';
 
 //sections 
-import Header from '../../Sections/Header';
-import Nav from '../../Sections/Nav';
+import Header from '../../Components/Header';
+import Nav from '../../Components/Nav';
 import HeroMain from './sections/HeroMain';
-import Footer from '../../Sections/Footer';
+import Footer from '../../Components/Footer';
 import Supplier from './sections/Supplier';
 import Services from './sections/Services';
 import Items from './sections/Items';
