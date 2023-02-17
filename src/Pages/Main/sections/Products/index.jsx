@@ -15,6 +15,7 @@ import cover2 from '../../../../Assets/image/main/electronics/cover1.png';
 const ProductsWrapper=styled.div`
     display:flex;
     margin: 20px 0;
+    overflow:hidden;
 `
 export default function Products() {
     return (

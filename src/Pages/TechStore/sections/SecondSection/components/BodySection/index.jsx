@@ -18,6 +18,7 @@ export default function BodySection() {
               title={product.title}
               description={product.description}
               discount={product.discount}
+              price={product.price}
             />
           </>
         ))}

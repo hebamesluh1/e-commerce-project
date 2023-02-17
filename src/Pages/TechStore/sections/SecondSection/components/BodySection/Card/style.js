@@ -42,7 +42,7 @@ export const Details = styled.a`
     padding-top: 20px;
     display: inline-block;
 `
-export const ImgBorder = styled.div`
+export const ImgBorder = styled.button`
     border: 1px solid #E3E8EE;
     box-shadow: 0px 1px 2px rgba(56, 56, 56, 0.08);
     border-radius: 6px;

@@ -25,8 +25,10 @@ import O5 from "../../../../Assets/image/main/offers/08.png";
         <OffersSectionBox>
             <Flex>
             <SectionDetails>
+                <div>
                 <SectionNameH3>Deals and offers</SectionNameH3>
                 <SectionDescriptionP>Hygiene equipments</SectionDescriptionP>
+                </div>
                 <TimerSection />
             </SectionDetails>
 

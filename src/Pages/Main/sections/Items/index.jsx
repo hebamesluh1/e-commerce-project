@@ -19,6 +19,11 @@ import styled from 'styled-components';
 const ItemWrapper = styled(FlexBetween)`
     margin:35px 0;
     margin-bottom:100px;
+    display: flex;
+    gap: 5%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
 `
 export default function Items() {
     return (
@@ -26,26 +31,16 @@ export default function Items() {
             <Container>
             <H2 title="Recommended items"/>
             <ItemWrapper>
-                <div>
                 <ItemBox img={img5} price="10.30" body="T-shirts with multiple colors, for men"/>
                 <ItemBox img={img4} price="9.99" body="Canon camera black, 100x zoom"/>
-                </div>
-                <div>
                 <ItemBox img={img3} price="10.30" body="Jeans shorts for men blue color"/>
                 <ItemBox img={img2} price="8.99" body="Headset for gaming with mic"/>
-                </div>
-                <div>
                 <ItemBox img={img1} price="12.50" body="Brown winter coat medium size"/>
                 <ItemBox img={img7} price="10.30" body="Smartwatch silver color modern"/>
-                </div>
-                <div>
                 <ItemBox img={img6} price="34.00" body="Jeans bag for travel for men"/>
                 <ItemBox img={img9} price="10.30" body="Blue wallet for men leather metarfial"/>
-                </div>
-                <div>
                 <ItemBox img={img7} price="99.00" body="Leather wallet"/>
                 <ItemBox img={img8} price="80.95" body="Jeans bag for travel for men"/>
-                </div>
             </ItemWrapper>
             </Container>
         </>

@@ -17,4 +17,7 @@ export const LiStyled = styled.li`
 `
 export const WrapperStyled = styled(FlexBetween)`
     padding: 15px 0;
+    @media(max-width:920px){
+        display:none;
+    }
 `

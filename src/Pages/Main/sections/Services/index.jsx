@@ -21,6 +21,11 @@ import icon3 from '../../../../Assets/image/main/services/security.png';
 const BoxWrapper = styled(FlexBetween)`
     padding: 20px 0;
     margin-bottom: 20px;
+    flex-wrap:wrap;
+    @media(max-width:925px){
+        justify-content: center;
+        gap:50px;
+    }
 `
 export default function Services() {
     return (

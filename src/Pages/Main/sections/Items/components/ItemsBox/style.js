@@ -18,4 +18,7 @@ export const ItemsWrapper =styled.div`
     img{
         width:100%;
     }
+    @media(max-width:925px){
+        width:40%;
+    }
 `

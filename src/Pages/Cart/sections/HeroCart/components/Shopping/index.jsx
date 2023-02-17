@@ -1,20 +1,21 @@
-import React from 'react'
-import BtnCart from './components/BtnCart'
-import Card from './components/Card'
-import { BorderWrapper } from '../Payment/style';
-
-import img1 from '../../../../../../Assets/image/cart/card2/img-group.png';
-import img2 from '../../../../../../Assets/image/cart/card2/img-group (1).png';
-import img3 from '../../../../../../Assets/image/cart/card2/img-group (2).png';
-
+import React from "react";
+import BtnCart from "./components/BtnCart";
+import Card from "./components/Card";
+import img from '../../../../../../Assets/image/cart/card1/preview.png'
+import { BorderWrapper } from "../Payment/style";
 
 export default function Shopping() {
-    return (
-        <BorderWrapper style={{gap: '20px'}}>
-            <Card img={img1}  price="78.99"/>
-            <Card img={img2}  price="39.00"/>
-            <Card img={img3}  price="170.50"/>
-            <BtnCart />
-        </BorderWrapper>
-    )
+  return (
+    <BorderWrapper style={{ gap: "20px" }}>
+      <h3>No product to shown</h3>
+      <img src={img} alt="" width='50%'/>
+      {/* {!state.products.length && "No Products in the cart"}
+      <ul>
+        {state?.products?.map((product,index) => (
+          <Card key={index} img={product.img} price={product.price} />
+        ))}
+      </ul> */}
+      <BtnCart />
+    </BorderWrapper>
+  );
 }

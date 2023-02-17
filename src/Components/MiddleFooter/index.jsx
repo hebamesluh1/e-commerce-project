@@ -20,7 +20,10 @@ import FooterList from '../FooterList';
 
 const MiddleFooterStyled = styled.div`
     padding:2.5rem 0;
-    background:${props=>props.theme.palette.sectionBackground}
+    background:${props=>props.theme.palette.sectionBackground};
+    @media (max-width: 920px) {
+        display: none;
+      }
 `
 
 export default function MiddleFooter() {

@@ -30,6 +30,7 @@ export default function BodySuggestion() {
                 rateImg={goodRate}
                 rate="7.5"
                 discount={product.discount}
+                price={product.price}
               />
             </>
           ))}

@@ -26,8 +26,7 @@ const SearchForm = ({show}) => {
                         onChange={(e) => setSelectedOption(e.target.value)}>
                 All category
                 <option value=''> All category</option>
-                <option value={PATHS.LIST}> Electronics</option>
-                <option value={PATHS.CLOTHES}> Clothes</option>
+                <option value={PATHS.LIST}> Products</option>
             </SearchSelectStyled>
             <SearchSubmitStyled type="submit" value="Search">
                 Search

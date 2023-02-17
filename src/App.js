@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 import { ThemeProvider } from "styled-components";
 import { router as routes } from './routes';
 import AuthProvider from './Context/authContext';
-import CartContextProvider from './Context/productContext';
+import ProductProvider from './Context/productContext';
 
 //Style
 import { GlobalStyle } from "./Global/style";
@@ -26,12 +26,10 @@ function App() {
     <ThemeProvider theme={theme}>
         <themeContext.Provider value={[theme, setTheme]}>
           <AuthProvider>
-            <CartContextProvider>
             <GlobalStyle />
             <Suspense fallback={<div className="lds-dual-ring"></div>}>
               {router}
             </Suspense>
-            </CartContextProvider>
           </AuthProvider>
         </themeContext.Provider>
     </ThemeProvider>

@@ -13,6 +13,9 @@ export const FlexBetween = styled(FlexDiv)`
 `
 export const Container = styled.div`
     padding: 0 8rem;
+    @media(max-width:920px){
+    padding:0 1.5rem;
+    }
 `
 export const SpaceContainer = styled.div`
     padding:20px 0;

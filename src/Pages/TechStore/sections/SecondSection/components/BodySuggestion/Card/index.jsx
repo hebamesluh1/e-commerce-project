@@ -5,10 +5,9 @@ import cart from '../../../../../../../Assets/image/cart/card1/shopping_cart.png
 
 import { DescriptionStyle ,ImgBorder} from '../../BodySection/Card/style';
 import styled from 'styled-components';
-import { FlexDiv ,H4Styling} from '../../../../../../../Global/components';
+import {H4Styling,FlexBetween} from '../../../../../../../Global/components';
 
 
-import { useCartContext } from '../../../../../../../Context/productContext';
 
 const WrapperCard2 = styled.div`
     border: 1px solid #E3E8EE;
@@ -26,18 +25,16 @@ const WrapperCard2 = styled.div`
 const ContentWrapper =styled.div`
     padding:10px;
 `
-export default function Card2({img , discount , rateImg ,rate}) {
-    const cartContext = useCartContext();
-    console.log('cart context test',cartContext);
+export default function Card2({img , discount , rateImg ,rate,price}) {
     return (
         <WrapperCard2>
             <div className='image'>
             <img src={img} alt="" />
             </div>
             <ContentWrapper>
-                <FlexDiv style={{justifyContent:'space-between'}}>
+                <FlexBetween>
                     <div>
-                    <H4Styling>$99.50 <del>{discount}</del></H4Styling>
+                    <H4Styling>{price} <del>{discount}</del></H4Styling>
                     <img src={rateImg} alt="" /><span style={{lineHeight: "19px",color: "#FF9017"}}>
                         {rate}
                     </span>
@@ -45,7 +42,7 @@ export default function Card2({img , discount , rateImg ,rate}) {
                     <ImgBorder>
                         <img src={cart} alt="" />
                     </ImgBorder>
-                </FlexDiv>
+                </FlexBetween>
                 <DescriptionStyle>
                 GoPro HERO6 4K Action Camera - Black
                 </DescriptionStyle>
