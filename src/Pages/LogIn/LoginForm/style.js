@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const FormBox = styled.form`
     width: 387px;
-    margin: 100px auto 336px;
+    margin: 3% auto;
     background-color: ${props=>props.theme.palette.sectionBackground};
     padding: 30px;
     box-shadow: 0px 3px 10px rgba(32, 32, 32, 0.1);

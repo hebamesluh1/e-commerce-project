@@ -26,8 +26,6 @@ const NavLinkStyle = {
 
 export default function Input(props) {
   const SelectRef = React.createRef();
-  // const navigate=useNavigate();
-
   if (props.IsPassword) {
     return (
       <InputBox>

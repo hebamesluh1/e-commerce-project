@@ -15,6 +15,7 @@ const WrapperCard2 = styled.div`
     border-radius: 6px;
     background:${props=>props.theme.palette.sectionBackground};
     margin-bottom:20px;
+    width: 250px;
     .image{
         display:flex;
         justify-content:center;
