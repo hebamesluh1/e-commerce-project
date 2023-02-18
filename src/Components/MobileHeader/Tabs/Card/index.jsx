@@ -5,8 +5,7 @@ const Style = styled.div`
     border-radius: 6px;
     color: #0D6EFD;
     padding:10px;
-    width:fit-content;
-    width: 200px;
+    width: 100%;
 
 `
 const Card = ({text}) => {

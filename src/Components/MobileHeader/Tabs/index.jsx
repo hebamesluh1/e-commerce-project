@@ -1,23 +1,43 @@
-import React from 'react'
-import Card from './Card'
-import styled from 'styled-components'
+import React from "react";
+import Card from "./Card";
+import styled from "styled-components";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
 
 const Style = styled.div`
-    display:flex;
-    // gap:10px;
-    margin:10px 0;
-    // overflow-x: scroll;
-`
+  display: flex;
+  margin: 10px 0;
+`;
 const Tabs = () => {
   return (
     <Style>
-        <Card text="All Category"/>
-        <Card text="Hot offers"/>
-        <Card text="Gift boxes"/>
-        <Card text="Projects"/>
-        <Card text="Menu items"/>
+      <Swiper
+        spaceBetween={50}
+        slidesPerView={3}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <Card text="All Category" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card text="Hot offers" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card text="Gift boxes" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card text="Projects" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <Card text="Menu items" />
+        </SwiperSlide>
+      </Swiper>
     </Style>
-  )
-}
+  );
+};
 
-export default Tabs
+export default Tabs;

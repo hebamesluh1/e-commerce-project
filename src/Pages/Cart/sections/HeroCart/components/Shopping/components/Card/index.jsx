@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components';
 import { FlexDiv } from '../../../../../../../../Global/components';
-// import { useCartContext } from './../../../Context/productContext';
+import { useProductContext } from './../../../../../../../../Context/productContext';
 const Wrapper = styled.div`
     display:flex;
     justify-content:space-between;
@@ -46,10 +46,10 @@ const Btn = styled.button`
     font-size: 13px;
     line-height: 16px;
     color: ${props =>props.color === 'red'?'#FA3434':' #0D6EFD'};
+    cursor:pointer;
 `
-export default function Card5({img , price , quantity}) {
-    // const {state}=useCartContext();
-    //Here I try to make add to cart and remove from cart , but there aren't api with product or mock have all product sorry:(
+export default function Card5({img , price,id}) {
+    const {removeFromCart}=useProductContext();
     return (
         <Wrapper>
             <FlexDiv style={{alignItems:'flex-start'}}>
@@ -59,7 +59,7 @@ export default function Card5({img , price , quantity}) {
                     <P>Size :meduim , Color:blue , Material:Plastic</P>
                     <P>Seller:Artel Market</P>
                     <div className="btn">
-                        <Btn color="red">Remove</Btn>
+                        <Btn color="red" onClick={()=>removeFromCart(id)}>Remove</Btn>
                         <Btn>Save for later</Btn>
                     </div>
                 </div>

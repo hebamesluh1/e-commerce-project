@@ -17,7 +17,7 @@ import { PATHS } from "./../../../../../../../routes/index";
 import { Link } from "react-router-dom";
 import AddBtn from "./AddBtn";
 
-export default function Card({ title, img, discount, description, price }) {
+export default function Card({ title, img, discount, description, price,products }) {
 
   return (
     <CardWrapper>
@@ -27,7 +27,7 @@ export default function Card({ title, img, discount, description, price }) {
       <div>
         <FlexDiv style={{ justifyContent: "space-between" }}>
           <H5Styling>{title}</H5Styling>
-          <AddBtn/>
+          <AddBtn products={products}/>
         </FlexDiv>
 
         <H4Styling>

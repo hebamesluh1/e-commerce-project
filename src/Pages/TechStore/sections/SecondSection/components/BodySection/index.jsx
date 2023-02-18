@@ -14,6 +14,7 @@ export default function BodySection() {
         {products.map((product) => (
           <>
             <Card
+              products={product}
               img={product.img}
               title={product.title}
               description={product.description}
