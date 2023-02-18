@@ -3,9 +3,13 @@ import styled from "styled-components";
 export const PartWrapper = styled.div`
     border: 1px solid #E0E0E0;
     display:flex;
-    height:128.5px;
-    justify-content: space-between;
-    background:${props=>props.theme.palette.sectionBackground}
+    justify-content:space-between;
+    width:25%;
+    background:${props=>props.theme.palette.sectionBackground};
+    @media(max-width:920px){
+            justify-content: flex-start;
+    width: fit-content;
+    }
 `
 export const HeadPart = styled.h3`
     ${props=>props.theme.fonts.body1};

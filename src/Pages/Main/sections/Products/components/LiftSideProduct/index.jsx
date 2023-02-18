@@ -12,6 +12,10 @@ const WrapperLeft = styled.div`
     border-radius: 6px 0px 0px 6px;
     position:relative;
     flex-basis: 17%;
+    height:100%;
+    @media (max-width: 920px) {
+    display:none;
+  }
 `
 const ButtonProduct = styled.button`
     background: ${props=>props.theme.palette.sectionBackground};

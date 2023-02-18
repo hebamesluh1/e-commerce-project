@@ -17,29 +17,20 @@ import F8 from '../../../../../../Assets/image/main/electronics/10.png';
 const ProductWrapper = styled.div`
     display:flex;
     flex-basis:83%;
+    flex-wrap:wrap;
 `
-const BoxProduct = styled.div`
-    width:25%;
-`
+
 export default function RightSideProductF() {
     return (
         <ProductWrapper>
-            <BoxProduct>
                 <ProductPart title="Smart watches" body="19" img={F3}/>
                 <ProductPart title="Gaming set" body="35" img={F6}/>
-            </BoxProduct>
-            <BoxProduct>
                 <ProductPart title="Cameras" body="89" img={F5}/>
                 <ProductPart title="Laptop & PC" body="340" img={F4}/>
-            </BoxProduct>
-            <BoxProduct>
                 <ProductPart title="Headphones" body="10" img={F2}/>
                 <ProductPart title="Smartphones" body="19" img={F7}/>
-            </BoxProduct>
-            <BoxProduct>
                 <ProductPart title="Smart watches" body="90" img={F1}/>
                 <ProductPart title="Electric Kattle" body="240" img={F8}/>
-            </BoxProduct>
         </ProductWrapper>
     )
 }

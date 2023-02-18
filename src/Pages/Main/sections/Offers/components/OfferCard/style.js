@@ -6,6 +6,9 @@ export const OfferCardBox = styled.div`
     padding: 20px;
     height: 235px;
     text-align: center;
+    @media(max-width:920px){
+    width:fit-content;
+    border:none
 `;
 
 export const OfferProduct = styled.h3`

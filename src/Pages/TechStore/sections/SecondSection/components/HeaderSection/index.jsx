@@ -10,7 +10,7 @@ import {WrapperSection,FlexDiv} from './style';
 
 import { NavLink } from 'react-router-dom';
 import { PATHS } from '../../../../../../routes';
-import CheckBox from '../../../Aside/components/Brands/CheckBox';
+
 
 
 export default function HeaderSection() {
@@ -19,9 +19,6 @@ export default function HeaderSection() {
             <div>12,911 items in <span>Mobile accessory </span></div>
 
             <FlexDiv>
-            <FlexDiv>
-                <CheckBox title="Verified only"/>  
-            </FlexDiv>
             <div>
                 <select>
                     <option value="#">Featured</option>

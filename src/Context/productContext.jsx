@@ -1,19 +1,17 @@
-import React, { createContext, useContext } from 'react';
-import useCartReducer from '../Hooks/useCartReducer';
+import { createContext, useContext } from "react";
+import useCart from '../Hooks/useProductReducer';
 
-const CartContext = createContext({});
+const productContext = createContext(null);
 
-export const useCartContext = () => {
-    return useContext(CartContext)
-}
+export const useProductContext = () => {
+  return useContext(productContext);
+};
 
-const CartContextProvider = ({ children }) => {
-    const cart = useCartReducer();
-    return (
-        <CartContext.Provider value={cart}>
-            {children}
-        </CartContext.Provider>
-    )
-}
+const ProductProvider = ({ children }) => {
+  const cart = useCart();
+  return (
+    <productContext.Provider value={cart}>{children}</productContext.Provider>
+  );
+};
 
-export default CartContextProvider
+export default ProductProvider;

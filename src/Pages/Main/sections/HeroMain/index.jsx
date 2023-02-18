@@ -16,6 +16,10 @@ const WrapperStyledGrid=styled(BackgroundWhite)`
     gap:20px;
     padding:20px;
     margin-top:20px;
+    @media(max-width:920px){
+    display:grid;
+    grid-template-columns:1fr;
+  }
 `
 
 export default function HeroMain() {

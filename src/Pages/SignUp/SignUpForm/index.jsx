@@ -145,7 +145,7 @@ export default function SignUpForm() {
 
 
     return (
-        <FormBox onSubmit={handleSubmit}>
+        <FormBox onSubmit={handleSubmit} style={{marginBottom:'20%'}}>
         <FormHeading name="Register" />
 
         <Dflex>

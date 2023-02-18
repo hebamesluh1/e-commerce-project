@@ -1,18 +1,21 @@
 import styled from "styled-components";
 
 export const Style = styled.div`
-ul{
-    list-style:none;
-}
-li{
-    padding:10px;
-    margin:10px;
-    color: ${props=>props.theme.palette.gray600};
-    cursor:pointer;
-}
-.active{
-    background: #E5F1FF;
-    color: ${props=>props.theme.palette.contentColor};
-    border-radius:6px;
-}
-`
+  ul {
+    list-style: none;
+  }
+  li {
+    padding: 10px;
+    margin: 10px;
+    color: ${(props) => props.theme.palette.gray600};
+    cursor: pointer;
+  }
+  .active {
+    background: #e5f1ff;
+    color: ${(props) => props.theme.palette.contentColor};
+    border-radius: 6px;
+  }
+  @media (max-width: 920px) {
+    display: none;
+  }
+`;

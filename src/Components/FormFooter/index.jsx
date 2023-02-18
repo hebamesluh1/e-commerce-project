@@ -12,9 +12,9 @@ const Footer = styled.footer`
   padding: 26px 124px;
   column-gap: 40px;
   row-gap: 15px;
-  position:fixed;
-  bottom:0;
-  width:100%;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   
   @media (max-width: 600px) {
     & {
