@@ -1,10 +1,6 @@
 import React from "react";
 import { Container } from "../../../../Global/components";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
 
 //components
 import RightSideProduct from "./components/RightSideProduct/electronic";
