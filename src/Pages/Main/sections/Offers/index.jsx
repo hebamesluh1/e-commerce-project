@@ -82,7 +82,6 @@ export default function Offers() {
           <SwiperSlide>
             <OfferCard img={O5} product="Canon camreras" discount="25%" />
           </SwiperSlide>
-          ...
         </Swiper>
       </Mobile>
     </Container>

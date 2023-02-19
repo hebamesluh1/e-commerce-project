@@ -19,6 +19,9 @@ export const P = styled.p`
     color:${props=>props.theme.palette.gray800};
     margin:20px 0;
     width:180px;
+    @media(max-width:920px){
+        display:none;
+    }
 `
 export const BtnCart = styled.button`
     display:flex;
