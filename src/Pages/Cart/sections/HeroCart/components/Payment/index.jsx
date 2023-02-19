@@ -8,13 +8,13 @@ import pay4 from '../../../../../../Assets/image/cart/pay/4.png';
 import pay5 from '../../../../../../Assets/image/cart/pay/5.png';
 
 //style
-import { BorderWrapper,P,InputBox,Btn,InputBorder,Total,CheckoutBtn } from './style';
+import { BorderWrapper,P,InputBox,Btn,InputBorder,Total,CheckoutBtn,Style } from './style';
 import {FlexBetween} from '../../../../../../Global/components';
 
 
 export default function Payment() {
     return (
-        <div>
+        <Style>
             <BorderWrapper>
                 <P>Have a coupon?</P>
                 <InputBorder><InputBox type="text" placeholder='Add coupon'/> <Btn>Apply</Btn></InputBorder>
@@ -37,6 +37,6 @@ export default function Payment() {
                     <img src={pay5} alt="" />
                 </FlexBetween>
             </BorderWrapper>
-        </div>
+        </Style>
     )
 }

@@ -32,5 +32,8 @@ export const BtnCart = styled.button`
     img{
         margin-right:10px;
     }
+    @media(max-width:920px){
+        width:100%;
+    }
 
 `
