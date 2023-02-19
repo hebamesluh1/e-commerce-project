@@ -27,7 +27,7 @@ const Menu=()=> {
             </li>
 
             <li>
-                <Link to='/'><img src={Orders} alt="order" /></Link>
+                <Link to={`${PATHS.HOME}/details`}><img src={Orders} alt="order" /></Link>
             </li>
 
             <li>

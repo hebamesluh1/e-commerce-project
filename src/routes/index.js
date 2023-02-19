@@ -47,15 +47,12 @@ export const router = [
         element: <TechStore />,
         children: [
           { index: true, element: <Navigate to={PATHS.GRID} /> },
-          {
-            path: PATHS.GRID,
-            element: <BodySection />,
-            children: [{ path: `${PATHS.DETAILS}:id`, element: <Details /> }],
-          },
+          { path: PATHS.GRID, element: <BodySection /> },
           { path: PATHS.TABLE, element: <BodySuggestion /> },
         ],
       },
       { path: PATHS.CART, element: <Cart /> },
+      { path: PATHS.DETAILS, element: <Details /> },
     ],
   },
   { path: "*", element: <NotFound /> },

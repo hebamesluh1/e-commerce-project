@@ -58,3 +58,8 @@ export const CheckoutBtn = styled.button`
     border:none;
     cursor:pointer;
 `
+export const Style=styled.div`
+@media (max-width: 920px) {
+    display:none;
+  }
+`

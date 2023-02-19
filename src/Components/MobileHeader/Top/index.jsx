@@ -34,7 +34,7 @@ const Top = () => {
           <img src={logo} alt="logo" />
         </FlexCenter>
         <FlexCenter style={{ gap: "20px" }}>
-          <Link to={PATHS.CART}>
+          <Link to={`${PATHS.HOME}/cart`}>
             <img src={cart} alt="cart" />
           </Link>
           <img src={avatar} alt="avatar" />
