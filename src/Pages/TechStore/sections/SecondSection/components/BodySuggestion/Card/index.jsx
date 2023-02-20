@@ -6,6 +6,7 @@ import cart from '../../../../../../../Assets/image/cart/card1/shopping_cart.png
 import { DescriptionStyle ,ImgBorder} from '../../BodySection/Card/style';
 import styled from 'styled-components';
 import {H4Styling,FlexBetween} from '../../../../../../../Global/components';
+import AddBtn from '../../BodySection/Card/AddBtn';
 
 
 
@@ -25,7 +26,7 @@ const WrapperCard2 = styled.div`
 const ContentWrapper =styled.div`
     padding:10px;
 `
-export default function Card2({img , discount , rateImg ,rate,price}) {
+export default function Card2({img , discount , rateImg ,rate,price,products}) {
     return (
         <WrapperCard2>
             <div className='image'>
@@ -39,9 +40,7 @@ export default function Card2({img , discount , rateImg ,rate,price}) {
                         {rate}
                     </span>
                     </div>
-                    <ImgBorder>
-                        <img src={cart} alt="" />
-                    </ImgBorder>
+                    <AddBtn products={products}/>
                 </FlexBetween>
                 <DescriptionStyle>
                 GoPro HERO6 4K Action Camera - Black

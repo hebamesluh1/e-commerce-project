@@ -20,6 +20,7 @@ export default function Table() {
     return (
         <div>
             <TableStyle>
+                <tbody>
                 <tr>
                     <td className='firstColumn'><P style={{margin:'0'}}>Model</P></td>
                     <td><P style={{margin:'0'}}>#8786867</P></td>
@@ -40,6 +41,7 @@ export default function Table() {
                     <td className='firstColumn'><P style={{margin:'0'}}> Memory</P></td>
                     <td><P style={{margin:'0'}}> 36GB RAM</P></td>
                 </tr>
+                </tbody>
             </TableStyle>
         </div>
     )

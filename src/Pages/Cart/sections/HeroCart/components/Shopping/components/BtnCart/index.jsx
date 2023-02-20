@@ -10,13 +10,13 @@ export default function BtnCart() {
   const { clearCart, state } = useProductContext();
   return (
     <FlexDiv style={{ justifyContent: "space-between", margin: "20px 0" }}>
-      <Btn color="blue" onClick={() => navigate(`${PATHS.HOME}`)}>
+      <Btn color="blue" onClick={() => navigate(`${PATHS.HOME}/list`)}>
         <FlexDiv>
           <img src={arrow} alt="" /> Back to shop
         </FlexDiv>
       </Btn>
       {state.products.length > 0 ? (
-        <Btn onClick={() => clearCart()}>Remove All</Btn>
+        <Btn onClick={() =>clearCart()}>Remove All</Btn>
       ) : (
         ""
       )}

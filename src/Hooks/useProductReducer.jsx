@@ -17,7 +17,7 @@ const Reduce = (state, action) => {
     case ACTIONS.REMOVE_FROM_CART:
       return { ...state, products: state.products.filter((product) => product.id !== action.payload)};
     case ACTIONS.CLEAR_CART:
-      return [];
+      return {products:[]};
     default:
       return state;
   }

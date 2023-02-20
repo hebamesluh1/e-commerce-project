@@ -7,12 +7,12 @@ import img4 from "../../../../Assets/image/cart/card1/5.png";
 import { Wrapper } from "./style";
 import { FlexBetween } from "../../../../Global/components";
 import NotMobile from "./../../../../Components/NotMobile/index";
-import Mobile from './../../../../Components/Mobile/index';
+import Mobile from "./../../../../Components/Mobile/index";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import 'swiper/css';
+import "swiper/css";
 export default function SavedLater() {
   return (
     <Wrapper>
@@ -26,17 +26,20 @@ export default function SavedLater() {
         </FlexBetween>
       </NotMobile>
       <Mobile>
-      <Swiper
-      spaceBetween={50}
-      slidesPerView={3}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide><Card img={img1} /></SwiperSlide>
-      <SwiperSlide><Card img={img2} /></SwiperSlide>
-      <SwiperSlide><Card img={img3} /></SwiperSlide>
-      <SwiperSlide><Card img={img4} /></SwiperSlide>
-    </Swiper>
+        <Swiper spaceBetween={50} slidesPerView={3}>
+          <SwiperSlide>
+            <Card img={img1} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card img={img2} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card img={img3} />
+          </SwiperSlide>
+          <SwiperSlide>
+            <Card img={img4} />
+          </SwiperSlide>
+        </Swiper>
       </Mobile>
     </Wrapper>
   );
