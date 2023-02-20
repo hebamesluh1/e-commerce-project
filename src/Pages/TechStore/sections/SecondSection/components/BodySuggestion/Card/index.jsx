@@ -1,9 +1,8 @@
 import React from 'react'
 
-import cart from '../../../../../../../Assets/image/cart/card1/shopping_cart.png'
 
 
-import { DescriptionStyle ,ImgBorder} from '../../BodySection/Card/style';
+import { DescriptionStyle} from '../../BodySection/Card/style';
 import styled from 'styled-components';
 import {H4Styling,FlexBetween} from '../../../../../../../Global/components';
 import AddBtn from '../../BodySection/Card/AddBtn';

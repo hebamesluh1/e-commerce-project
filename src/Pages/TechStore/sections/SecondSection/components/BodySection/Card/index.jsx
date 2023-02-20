@@ -13,8 +13,7 @@ import {
   Details,
 } from "./style";
 
-import { PATHS } from "./../../../../../../../routes/index";
-import { Link } from "react-router-dom";
+
 import AddBtn from "./AddBtn";
 
 export default function Card({
