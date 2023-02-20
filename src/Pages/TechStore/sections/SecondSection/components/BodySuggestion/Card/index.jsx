@@ -34,7 +34,7 @@ export default function Card2({img , discount , rateImg ,rate,price,products}) {
             <ContentWrapper>
                 <FlexBetween>
                     <div>
-                    <H4Styling>{price} <del>{discount}</del></H4Styling>
+                    <H4Styling>${price} <del>${discount}</del></H4Styling>
                     <img src={rateImg} alt="" /><span style={{lineHeight: "19px",color: "#FF9017"}}>
                         {rate}
                     </span>

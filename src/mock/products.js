@@ -9,11 +9,7 @@ import pro7 from "../Assets/image/ListStore/components/02.png";
 import pro8 from "../Assets/image/ListStore/components/03.png";
 import pro9 from "../Assets/image/ListStore/components/07.png";
 
-//image under cart
-import img1 from "../Assets/image/cart/card1/1.png";
-import img2 from "../Assets/image/cart/card1/2.png";
-import img3 from "../Assets/image/cart/card1/4.png";
-import img4 from "../Assets/image/cart/card1/5.png";
+
 
 export const products = [
   {
@@ -22,8 +18,9 @@ export const products = [
     title: "Canon Cmera EOS 2000, Black 10x zoom",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "$1128.00",
-    price: "$998.00",
+    discount: 1128.00,
+    price: 998.00,
+    categoreies:["Samsung",'Apple','Poco']
   },
 
   {
@@ -32,8 +29,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$90.00",
+    discount: 112.0,
+    price: 90.00
   },
 
   {
@@ -42,8 +39,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$78.00",
+    discount: 20.00,
+    price: 78.00
   },
 
   {
@@ -52,8 +49,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$56.00",
+    discount: 30.55,
+    price: 56.00
   },
 
   {
@@ -62,8 +59,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$747.00",
+    discount: 1000,
+    price: 747.00,
   },
 
   {
@@ -72,8 +69,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$346.00",
+    discount: 800,
+    price: 346.00,
   },
 
   {
@@ -82,8 +79,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$852.00",
+    discount:1000,
+    price: 852.00,
   },
 
   {
@@ -92,8 +89,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$457.00",
+    discount: 2035,
+    price: 457.00,
   },
 
   {
@@ -102,13 +99,8 @@ export const products = [
     title: "GoPro HERO6 4K Action Camera - Black",
     description:
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
-    discount: "",
-    price: "$23.00",
+    discount:2467,
+    price: 23.00
   },
 ];
-export const productUnderCart = [
-  { id: 1, img: img1 },
-  { id: 2, img: img2 },
-  { id: 3, img: img3 },
-  { id: 4, img: img4 },
-];
+

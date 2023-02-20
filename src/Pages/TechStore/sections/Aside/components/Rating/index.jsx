@@ -24,10 +24,10 @@ export default function Rating() {
         <HeadAside title="Rating"toggleShowList={toggleShowList} arrow={showList?expendLess:expendMore}/>
             {showList &&
                 <>
-                <CheckBox img={R1} title="5 star"/>
-                <CheckBox img={R2} title="4 star"/>
-                <CheckBox img={R3} title="3 star"/>
-                <CheckBox img={R4} title="2 star"/>
+                <CheckBox img={R1}/>
+                <CheckBox img={R2}/>
+                <CheckBox img={R3}/>
+                <CheckBox img={R4}/>
                 </>
             }
         </div>
