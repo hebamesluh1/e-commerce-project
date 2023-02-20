@@ -5,10 +5,12 @@ import { CheckBoxContext } from "../../../../../../../../Context/checkBoxContext
 
 
 export default function Suggestion() {
-    const [selectedCheckboxes] = useContext(CheckBoxContext);
+    const [selectedCheckboxes,setSelectedCheckboxes] = useContext(CheckBoxContext);
     const [isHidden, setIsHidden] = useState(false);
     const clearAll = () => {
         setIsHidden(true);
+        setSelectedCheckboxes(false);
+
     };
     return (
         <WrapperSuggestion>

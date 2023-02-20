@@ -36,7 +36,7 @@ export default function Card({
         </FlexDiv>
 
         <H4Styling>
-          {price} <del>{discount}</del>
+          ${price} <del>${discount}</del>
         </H4Styling>
         <div>
           <img src={rate} alt="" />
