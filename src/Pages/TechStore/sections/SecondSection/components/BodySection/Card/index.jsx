@@ -17,8 +17,14 @@ import { PATHS } from "./../../../../../../../routes/index";
 import { Link } from "react-router-dom";
 import AddBtn from "./AddBtn";
 
-export default function Card({ title, img, discount, description, price,products }) {
-
+export default function Card({
+  title,
+  img,
+  discount,
+  description,
+  price,
+  products,
+}) {
   return (
     <CardWrapper>
       <div>
@@ -27,7 +33,7 @@ export default function Card({ title, img, discount, description, price,products
       <div>
         <FlexDiv style={{ justifyContent: "space-between" }}>
           <H5Styling>{title}</H5Styling>
-          <AddBtn products={products}/>
+          <AddBtn products={products} />
         </FlexDiv>
 
         <H4Styling>
@@ -55,9 +61,7 @@ export default function Card({ title, img, discount, description, price,products
           </span>
         </div>
         <DescriptionStyle>{description}</DescriptionStyle>
-        <Link to={PATHS.DETAILS}>
-          <Details>View details</Details>
-        </Link>
+        <Details>View details</Details>
       </div>
     </CardWrapper>
   );

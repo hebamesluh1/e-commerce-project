@@ -51,8 +51,6 @@ export default function RightSideProduct() {
           <Swiper
             spaceBetween={50}
             slidesPerView={3}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
           >
             <SwiperSlide>
               <ProductPart title="Soft chairs" body="19" img={F1} />

@@ -11,7 +11,6 @@ import img4 from '../../../../Assets/image/main/items/04.png';
 import img5 from '../../../../Assets/image/main/items/05.png';
 import img6 from '../../../../Assets/image/main/items/06.png';
 import img7 from '../../../../Assets/image/main/items/07.png';
-import img8 from '../../../../Assets/image/main/items/11.png';
 import img9 from '../../../../Assets/image/main/items/33.png';
 import styled from 'styled-components';
 
@@ -23,7 +22,6 @@ const ItemWrapper = styled(FlexBetween)`
     gap: 5%;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
 `
 export default function Items() {
     return (
@@ -39,8 +37,7 @@ export default function Items() {
                 <ItemBox img={img7} price="10.30" body="Smartwatch silver color modern"/>
                 <ItemBox img={img6} price="34.00" body="Jeans bag for travel for men"/>
                 <ItemBox img={img9} price="10.30" body="Blue wallet for men leather metarfial"/>
-                <ItemBox img={img7} price="99.00" body="Leather wallet"/>
-                <ItemBox img={img8} price="80.95" body="Jeans bag for travel for men"/>
+                
             </ItemWrapper>
             </Container>
         </>

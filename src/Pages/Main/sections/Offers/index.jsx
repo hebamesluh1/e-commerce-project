@@ -64,8 +64,6 @@ export default function Offers() {
         <Swiper
           spaceBetween={50}
           slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
         >
           <SwiperSlide>
             <OfferCard img={O1} product="Smart watches" discount="25%" />

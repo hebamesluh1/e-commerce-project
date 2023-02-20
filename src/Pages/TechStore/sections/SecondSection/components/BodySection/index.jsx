@@ -5,23 +5,21 @@ import Card from "./Card";
 import Suggestion from "../../../Aside/components/Brands/CheckBox/Suggestion";
 import { products } from "./../../../../../../mock/products";
 
-
 export default function BodySection() {
   return (
     <>
       <Suggestion />
       <div>
         {products.map((product) => (
-          <>
-            <Card
-              products={product}
-              img={product.img}
-              title={product.title}
-              description={product.description}
-              discount={product.discount}
-              price={product.price}
-            />
-          </>
+          <Card
+            key={product.id}
+            products={product}
+            img={product.img}
+            title={product.title}
+            description={product.description}
+            discount={product.discount}
+            price={product.price}
+          />
         ))}
       </div>
     </>

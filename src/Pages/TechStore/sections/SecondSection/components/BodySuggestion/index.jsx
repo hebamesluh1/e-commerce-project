@@ -24,15 +24,15 @@ export default function BodySuggestion() {
       <Wrapper>
         <div className="content-wrapper">
           {products.map((product) => (
-            <>
-              <Card
-                img={product.img}
-                rateImg={goodRate}
-                rate="7.5"
-                discount={product.discount}
-                price={product.price}
-              />
-            </>
+            <Card
+              key={product.id}
+              products={product}
+              img={product.img}
+              rateImg={goodRate}
+              rate="7.5"
+              discount={product.discount}
+              price={product.price}
+            />
           ))}
         </div>
       </Wrapper>
