@@ -26,6 +26,7 @@ export default function LoginForm() {
     const [checkbox, setCheckbox] = useState(false);
     const [valid, setValid] = useState(false);
     const [errors, setErrors] = useState({});
+    const [errormsg, setErrormsg] = useState('');
 
     const schema = yup.object().shape({
         username: yup.string().email().required(),
@@ -36,37 +37,38 @@ export default function LoginForm() {
         e.preventDefault();
         setLoading(true);
         schema
-        .validate(
-            {
-            checkbox,
-            password,
-            username,
-            },
-            { abortEarly: false }
-        )
-        .then(async ({ username, password }) => {
-            const res = await axios.post('https://react-tt-api.onrender.com/api/users/login', {
-                email: username,
-                password,
-            });
-            if (res) {
-                setToken(res.data.token)
-                setUserName(res.data.name)
-                localStorage.setItem('name', res.data.name);
-                localStorage.setItem('token',res.data.token);
-                login();
-            }
-            console.log(valid);
-            setErrors([]);
-        })
-        .catch((e) => {
-            const validationErrors = {};
-            e.inner.forEach(err => {
-            validationErrors[err.path] = err.message;
-            });
-            setErrors({...validationErrors});
-            setValid(false);
-        }).finally(()=>setLoading(false))
+            .validate(
+                {
+                    checkbox,
+                    password,
+                    username,
+                },
+                { abortEarly: false }
+            )
+            .then(async ({ username, password }) => {
+                const res = await axios.post('https://react-tt-api.onrender.com/api/users/login', {
+                    email: username,
+                    password,
+                });
+                if (res) {
+                    setToken(res.data.token)
+                    setUserName(res.data.name)
+                    localStorage.setItem('name', res.data.name);
+                    localStorage.setItem('token', res.data.token);
+                    login();
+                }
+                console.log(valid);
+                setErrors([]);
+            })
+            .catch((e) => {
+                const validationErrors = {};
+                setErrormsg(e.response.data.message);
+                e.inner.forEach(err => {
+                    validationErrors[err.path] = err.message;
+                });
+                setErrors({ ...validationErrors });
+                setValid(false);
+            }).finally(() => setLoading(false))
     };
 
     const handleChangeInput = (e) => {
@@ -86,49 +88,49 @@ export default function LoginForm() {
 
     return (
         <FormBox onSubmit={handleSubmit}>
-        <FormHeading name="Sign in" />
+            <FormHeading name="Sign in" />
+            {errormsg && <ErrorMessage>{errormsg}</ErrorMessage>}
+            <Input
+                id="username"
+                label="Username"
+                placeholder="Email or phone"
+                type="text"
+                HandleInputFunction={handleChangeInput}
+                value={username}
+            />
+            {!errors.username ? null : <ErrorMessage>{errors.username}</ErrorMessage>}
 
-        <Input
-            id="username"
-            label="Username"
-            placeholder="Email or phone"
-            type="text"
-            HandleInputFunction={handleChangeInput}
-            value={username}
-        />
-        {!errors.username?null: <ErrorMessage>{errors.username}</ErrorMessage> }
-
-        <Input
-            id="password"
-            label="Password"
-            placeholder="Type here"
-            type={passwordType}
-            value={password}
-            IsPassword={true}
-            ChangeTypeFunction={changePasswordType}
-            HandleInputFunction={handleChangeInput}
-        />
-        {!errors.password?null: <ErrorMessage>{errors.password}</ErrorMessage> }
-        <Input
-            id="checkbox"
-            label="Remember me"
-            IsCheckBox={true}
-            ChangeCheckboxState={handleCheckbox}
-            checked={checkbox}
-        />
-        {!errors.checkbox?null: <ErrorMessage>{errors.checkbox}</ErrorMessage> }
+            <Input
+                id="password"
+                label="Password"
+                placeholder="Type here"
+                type={passwordType}
+                value={password}
+                IsPassword={true}
+                ChangeTypeFunction={changePasswordType}
+                HandleInputFunction={handleChangeInput}
+            />
+            {!errors.password ? null : <ErrorMessage>{errors.password}</ErrorMessage>}
+            <Input
+                id="checkbox"
+                label="Remember me"
+                IsCheckBox={true}
+                ChangeCheckboxState={handleCheckbox}
+                checked={checkbox}
+            />
+            {!errors.checkbox ? null : <ErrorMessage>{errors.checkbox}</ErrorMessage>}
 
 
-        <Input IsSubmit={true} type="submit" value={loading?'Loading...':"Log In"}/>
-        <OR>OR</OR>
-        <Input IsGoogle={true} />
-        <Input IsFacebook={true} />
-        <Switcher>
-            Don’t have an account?
-            <Link to={PATHS.SIGNUP} className="link">
-            &nbsp;Register now
-            </Link>
-        </Switcher>
-    </FormBox>
+            <Input IsSubmit={true} type="submit" value={loading ? 'Loading...' : "Log In"} />
+            <OR>OR</OR>
+            <Input IsGoogle={true} />
+            <Input IsFacebook={true} />
+            <Switcher>
+                Don’t have an account?
+                <Link to={PATHS.SIGNUP} className="link">
+                    &nbsp;Register now
+                </Link>
+            </Switcher>
+        </FormBox>
     );
 }

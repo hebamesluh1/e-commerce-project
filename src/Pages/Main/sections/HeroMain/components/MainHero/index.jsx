@@ -2,12 +2,12 @@ import React from 'react';
 
 import {Style,WrapperItems,HeadHero,HeadHero2,Button} from './style';
 
-export default function MainHero() {
+export default function MainHero({image,title}) {
     return (
-        <Style>
+        <Style image={image}>
             <WrapperItems>
                 <HeadHero>Lastest trending</HeadHero>
-                <HeadHero2>Electronic item</HeadHero2>
+                <HeadHero2>{title}</HeadHero2>
                 <Button>Learn more</Button>
             </WrapperItems>
         </Style>
