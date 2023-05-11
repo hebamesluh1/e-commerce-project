@@ -26,6 +26,7 @@ export default function LoginForm() {
     const [checkbox, setCheckbox] = useState(false);
     const [valid, setValid] = useState(false);
     const [errors, setErrors] = useState({});
+    const [errormsg, setErrormsg] = useState('');
 
     const schema = yup.object().shape({
         username: yup.string().email().required(),
@@ -61,6 +62,7 @@ export default function LoginForm() {
         })
         .catch((e) => {
             const validationErrors = {};
+            setErrormsg(e.response.data.message);
             e.inner.forEach(err => {
             validationErrors[err.path] = err.message;
             });
@@ -87,7 +89,7 @@ export default function LoginForm() {
     return (
         <FormBox onSubmit={handleSubmit}>
         <FormHeading name="Sign in" />
-
+        {errormsg&&<ErrorMessage>{errormsg}</ErrorMessage>}
         <Input
             id="username"
             label="Username"
