@@ -7,6 +7,9 @@ export const InputBox = styled.div`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   gap: ${(props) => (props.row ? "10px" : "3px")};
   width: ${(props) => (props.half ? "50%" : "100%")};
+  .error {
+    border: 2px solid red;
+  }
 `;
 
 export const Label = styled.label`
@@ -60,6 +63,7 @@ export const FacebookButton = styled(GoogleButton)`
 `;
 export const Select = styled.select`
   border: 1px solid #e0e0e0;
+  border-radius: 6px;
   padding: 10px 10px 11px;
   width: 120px;
   position: absolute;
