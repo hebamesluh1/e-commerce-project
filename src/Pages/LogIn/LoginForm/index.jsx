@@ -97,8 +97,9 @@ export default function LoginForm() {
                 type="text"
                 HandleInputFunction={handleChangeInput}
                 value={username}
+                className={errors.username && 'error'}
             />
-            {!errors.username ? null : <ErrorMessage>{errors.username}</ErrorMessage>}
+            {errors.username && <ErrorMessage>{errors.username}</ErrorMessage>}
 
             <Input
                 id="password"
@@ -109,8 +110,9 @@ export default function LoginForm() {
                 IsPassword={true}
                 ChangeTypeFunction={changePasswordType}
                 HandleInputFunction={handleChangeInput}
+                className={errors.password && 'error'}
             />
-            {!errors.password ? null : <ErrorMessage>{errors.password}</ErrorMessage>}
+            {errors.password && <ErrorMessage>{errors.password}</ErrorMessage>}
             <Input
                 id="checkbox"
                 label="Remember me"
@@ -118,7 +120,7 @@ export default function LoginForm() {
                 ChangeCheckboxState={handleCheckbox}
                 checked={checkbox}
             />
-            {!errors.checkbox ? null : <ErrorMessage>{errors.checkbox}</ErrorMessage>}
+            {errors.checkbox && <ErrorMessage>{errors.checkbox}</ErrorMessage>}
 
 
             <Input IsSubmit={true} type="submit" value={loading ? 'Loading...' : "Log In"} />

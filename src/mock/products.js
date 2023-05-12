@@ -18,7 +18,7 @@ export const products = [
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit",
     discount: 1128.0,
     price: 998.0,
-    categoreies: ["Samsung", "Apple", "Poco"],
+    category: "Samsung",
   },
 
   {

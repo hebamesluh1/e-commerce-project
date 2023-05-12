@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 // importing the eye icon
 import eye from "../../Assets/image/Login/eye.png";
@@ -38,6 +38,7 @@ export default function Input(props) {
           placeholder={props.placeholder}
           type={props.type}
           onChange={props.HandleInputFunction}
+          className={props.className}
         />
         {props.IsPassword ? (
           <img
@@ -86,7 +87,7 @@ export default function Input(props) {
   if (props.IsSubmit) {
     return (
       <InputBox>
-        <Inputt type={props.type} value={props.value}/>
+        <Inputt type={props.type} value={props.value} />
       </InputBox>
     );
   } else {
@@ -119,6 +120,7 @@ export default function Input(props) {
               placeholder={props.placeholder}
               type={props.type}
               onChange={props.HandleInputFunction}
+              className={props.className}
             />
           </InputBox>
         );
@@ -133,6 +135,7 @@ export default function Input(props) {
               id={props.id}
               placeholder={props.placeholder}
               type={props.type}
+              className={props.className}
               onChange={(e) => {
                 const Tel = SelectRef.current.value;
                 props.HandleInputFunction(e, Tel);
@@ -142,6 +145,7 @@ export default function Input(props) {
               ref={SelectRef}
               name="Telephone"
               id="Telephone"
+              className={props.className}
             >
               <option value="+998">UZ +998</option>
               <option value="+972">PS +972</option>
@@ -158,6 +162,7 @@ export default function Input(props) {
               placeholder={props.placeholder}
               type={props.type}
               onChange={props.HandleInputFunction}
+              className={props.className}
             />
           </InputBox>
         );
