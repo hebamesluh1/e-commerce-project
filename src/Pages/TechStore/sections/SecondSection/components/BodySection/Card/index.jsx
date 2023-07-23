@@ -11,10 +11,12 @@ import {
   H4Styling,
   DescriptionStyle,
   Details,
+  
 } from "./style";
 
 
 import AddBtn from "./AddBtn";
+import { Link } from "react-router-dom";
 
 export default function Card({
   title,
@@ -23,6 +25,7 @@ export default function Card({
   description,
   price,
   products,
+  id
 }) {
   return (
     <CardWrapper>
@@ -60,7 +63,7 @@ export default function Card({
           </span>
         </div>
         <DescriptionStyle>{description}</DescriptionStyle>
-        <Details>View details</Details>
+        <Details><Link to={`/home/details/${id}`}>View details</Link></Details>
       </div>
     </CardWrapper>
   );
