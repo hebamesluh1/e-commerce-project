@@ -2,14 +2,14 @@ import React from 'react'
 
 //images
 import check from '../../../../../../Assets/image/electronics2/part1/check.png';
-import views from '../../../../../../Assets/image/electronics2/part1/Group 1003.png';
 
 //style
 import  styled  from 'styled-components';
 import { FlexDiv } from '../../../../../../Global/components';
 import {P} from '../../../RelatedProduct/Card/style';
 import { H4Styling } from '../../../../../../Global/components';
-
+import { useParams } from 'react-router-dom';
+import { products } from '../../../../../../mock/products';
 
 const H3 = styled.h3`
     ${props=>props.theme.fonts.body1};
@@ -31,18 +31,21 @@ const BorderBottom=styled.div`
     border-bottom: 1px solid #E0E0E0;
 `
 export default function Details() {
+    const {id} = useParams();
+    const myData = products.find((item) => item.id === Number(id));
+    console.log(myData);
     return (
         <div>
             <FlexDiv>
                 <img src={check} alt="" />
                 <H3>In stock</H3>
             </FlexDiv>
-            <div>
-                <h2>Mens Long Sleeve T-shirt Cotton Base Layer Slim Muscle</h2>
-                <img src={views} alt="" />
+            <div style={{alignItems: "center",display: "flex", flexDirection: "column"}}>
+                <h2>{myData.title}</h2>
+                <img src={myData.img} alt="" />
             </div>
             <Bg>
-                <div><H4Styling style={{color: '#FA3434'}}>$98.00</H4Styling><P>50-100 pcs</P></div>
+                <div><H4Styling style={{color: '#FA3434'}}>${myData.price}</H4Styling><P>50-100 pcs</P></div>
                 <Border><H4Styling>$90.00</H4Styling><P>100-700 pcs</P></Border>
                 <div><H4Styling>$78.00</H4Styling><P>700+ pcs</P></div>
             </Bg>

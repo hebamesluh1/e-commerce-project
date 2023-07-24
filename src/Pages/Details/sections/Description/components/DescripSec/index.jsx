@@ -9,13 +9,16 @@ import { BorderWrapper } from '../../../../../Cart/sections/HeroCart/components/
 import Check from './Check';
 import HeadDescription from './HeadDescription';
 import Table from './Table';
+import { useParams } from 'react-router-dom';
+import { products } from '../../../../../../mock/products';
 
 export default function DescripSec() {
+    const {id} = useParams();
+    const myData = products.find((item) => item.id === Number(id));
     return (
         <BorderWrapper>
             <HeadDescription />
-            <P>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </P>
+            <P>{myData.description} </P>
             <Table />
             <div>
                 <Check/>

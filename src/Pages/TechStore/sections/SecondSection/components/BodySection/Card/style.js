@@ -38,7 +38,10 @@ export const DescriptionStyle = styled.p`
 export const Details = styled.a`
     font-size: 16px;
     line-height: 19px;
-    color: #0D6EFD;
+    a{
+
+        color: #0D6EFD;
+    }
     padding-top: 20px;
     display: inline-block;
 `

@@ -19,6 +19,7 @@ export default function BodySection() {
             {products.map((product) => (
           <Card
             key={product.id}
+            id={product.id}
             products={product}
             img={product.img}
             title={product.title}

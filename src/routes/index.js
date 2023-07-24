@@ -28,7 +28,7 @@ export const PATHS = {
   SIGNUP: "/signUp",
   LIST: "list",
   CART: "cart",
-  DETAILS: "details",
+  DETAILS: "details/:id",
   GRID: "grid",
   TABLE: "table",
   HOME: "/home",
